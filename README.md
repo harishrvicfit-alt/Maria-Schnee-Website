@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Maria Schnee – Website
 
-## Getting Started
+Moderne, responsive Website für den Ambulanten & Intensivpflegedienst Maria Schnee GmbH aus Waldkraiburg.
 
-First, run the development server:
+## Technischer Stack
+
+- Next.js 15 mit App Router und React Server Components
+- React 19 und TypeScript
+- Tailwind CSS 4 und shadcn/ui
+- Framer Motion und Lucide React
+- React Hook Form und Zod
+- Embla Carousel und Sonner
+- next-seo für strukturierte Daten
+
+## Lokale Entwicklung
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Die Website ist anschließend unter `http://localhost:3000` erreichbar.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Produktionsprüfung
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+npm audit --omit=dev
+```
 
-## Learn More
+Alle drei Prüfungen wurden am 13. Juli 2026 erfolgreich ausgeführt. Der Dependency-Audit meldet keine bekannten Schwachstellen.
 
-To learn more about Next.js, take a look at the following resources:
+## Kontaktformular
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Der Formular-Endpunkt validiert alle Eingaben serverseitig und enthält ein Honeypot-Feld gegen einfache Bot-Anfragen. Für die tatsächliche Zustellung muss vor dem Livegang ein sicherer Webhook hinterlegt werden:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+CONTACT_WEBHOOK_URL=https://...
+```
 
-## Deploy on Vercel
+Eine Vorlage befindet sich in `.env.example`. Medizinische oder andere besonders sensible Daten sollten nur über einen dafür vertraglich und technisch geeigneten Dienst übertragen werden.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Vor dem Livegang erforderlich
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Handelsregister, Registernummer, Aufsichtsbehörde, Umsatzsteuer-ID und berufsrechtliche Angaben im Impressum ergänzen.
+2. Hostinganbieter, Auftragsverarbeiter, Löschfristen und Formularversand in der Datenschutzerklärung konkretisieren.
+3. Kontakt-Webhook konfigurieren und mit Testanfragen prüfen.
+4. Verwendungsrechte aller finalen Fotos dokumentieren; idealerweise freigegebene Originalfotos des Unternehmens lokal einbinden.
+5. Telefonnummern, E-Mail-Adresse, Einsatzgebiet und Unternehmensangaben intern final freigeben.
+6. Rechtsseiten durch eine qualifizierte Rechtsberatung prüfen lassen.
+
+## Datenquellen
+
+Unternehmensangaben wurden ausschließlich aus öffentlich zugänglichen Quellen übernommen, insbesondere von:
+
+- `https://pflegedienst-mariaschnee.de/`
+- `https://pflegedienst-mariaschnee.de/impressum.html`
+- `https://www.biva.de/pflege-adressen/ambulant/bayern/kreis-m%C3%BChldorf%2Ba.inn/waldkraiburg/112872/ambulanter%2B%26%2Bintensivpflegedienst%2Bmaria%2Bschnee/`
+- `https://www.pflegesuche.de/pflegedienst/ambulanter-intensivpflegedienst-maria-schnee-in-waldkraiburg_1696.html`
+
+Bei widersprüchlichen Angaben wurde der offiziellen Unternehmenswebsite Vorrang gegeben. Nicht verifizierbare Angaben wurden nicht als Tatsachen veröffentlicht.

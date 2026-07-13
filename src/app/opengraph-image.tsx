@@ -1,0 +1,8 @@
+import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+/* eslint-disable @next/next/no-img-element -- ImageResponse unterstützt hier bewusst ein natives img-Element. */
+export const alt = "Maria Schnee – Ambulanter & Intensivpflegedienst";
+export const size = { width: 1200, height: 630 };
+export const contentType = "image/png";
+export default async function OpenGraphImage() { const logo = await readFile(join(process.cwd(), "public", "maria-schnee-logo.png")); const logoSrc = `data:image/png;base64,${logo.toString("base64")}`; return new ImageResponse(<div style={{ height: "100%", width: "100%", display: "flex", alignItems: "center", background: "linear-gradient(135deg,#f5fbff,#ffffff 52%,#fff0f7)", padding: "70px 82px", fontFamily: "Arial, sans-serif", position: "relative", overflow: "hidden" }}><div style={{ position: "absolute", width: 420, height: 420, borderRadius: 999, background: "rgba(184,224,247,.45)", right: -100, top: -100 }} /><div style={{ display: "flex", width: "100%", alignItems: "center", gap: 70 }}><img src={logoSrc} alt="" width="360" height="224" style={{ objectFit: "contain" }} /><div style={{ display: "flex", flexDirection: "column", width: 600 }}><div style={{ color: "#df007a", fontSize: 24, fontWeight: 700, letterSpacing: 3, textTransform: "uppercase" }}>Pflege aus Waldkraiburg</div><div style={{ marginTop: 20, color: "#1b2536", fontSize: 58, lineHeight: 1.08, fontWeight: 700, letterSpacing: -2 }}>Pflege, die Sicherheit gibt. Nähe, die bleibt.</div><div style={{ marginTop: 24, color: "#607086", fontSize: 24 }}>Ambulante & außerklinische Intensivpflege</div></div></div></div>, size); }

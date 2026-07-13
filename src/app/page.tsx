@@ -1,103 +1,44 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Check, HeartHandshake, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ContactForm } from "@/components/contact-form";
+import { ConsentMap } from "@/components/consent-map";
+import { FaqList } from "@/components/faq-list";
+import { Reveal } from "@/components/reveal";
+import { SectionHeading } from "@/components/section-heading";
+import { ServiceGrid } from "@/components/service-grid";
+import { TestimonialCarousel } from "@/components/testimonial-carousel";
+import { trustPoints, site } from "@/lib/site-data";
 
-export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+export default function HomePage() {
+  return <>
+    <section className="relative isolate min-h-[700px] overflow-hidden bg-[linear-gradient(135deg,#f8fbff_0%,#fff_50%,#fff0f7_100%)] lg:min-h-[760px]">
+      <div className="soft-grid absolute inset-0 -z-20 opacity-45 [mask-image:linear-gradient(to_bottom,black,transparent_82%)]" />
+      <div className="absolute -right-28 top-10 -z-10 size-[600px] rounded-full bg-sky-200/30 blur-3xl" />
+      <div className="container-shell grid min-h-[700px] items-center gap-12 py-16 lg:min-h-[760px] lg:grid-cols-[1.05fr_.95fr] lg:py-20">
+        <Reveal><div><div className="eyebrow"><ShieldCheck className="size-4" />Pflege aus Waldkraiburg. Persönlich seit 2017.</div><h1 className="text-balance text-[2.75rem] font-semibold leading-[1.02] tracking-[-0.055em] sm:text-6xl lg:text-[4.6rem]">Pflege, die <span className="text-primary">Sicherheit</span> gibt. Nähe, die bleibt.</h1><p className="mt-7 max-w-xl text-balance text-lg leading-8 text-muted-foreground">Ambulante und außerklinische Intensivpflege für Kinder, Jugendliche und Erwachsene – individuell geplant, fachlich verlässlich und mitten im vertrauten Leben.</p><div className="mt-9 flex flex-col gap-3 sm:flex-row"><Button asChild size="lg" className="h-13 rounded-full px-7 text-base shadow-xl shadow-primary/20"><Link href="/kontakt">Jetzt kostenlos beraten lassen <ArrowRight /></Link></Button><Button asChild size="lg" variant="outline" className="h-13 rounded-full bg-white/70 px-7 text-base"><a href={`tel:${site.phone}`}><Phone /> Direkt anrufen</a></Button></div><div className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-foreground/75">{["Individuelle Pflegeplanung", "Familienzentrierte Begleitung", "Mehrsprachige Beratung"].map((item) => <span key={item} className="flex items-center gap-2"><span className="grid size-5 place-items-center rounded-full bg-sky-100 text-sky-700"><Check className="size-3" /></span>{item}</span>)}</div></div></Reveal>
+        <Reveal delay={0.15} className="relative"><div className="relative mx-auto max-w-[580px]"><div className="absolute -left-10 top-16 size-32 rounded-full bg-primary/20 blur-2xl" /><div className="relative aspect-[4/4.6] overflow-hidden rounded-[2.5rem] border-[8px] border-white shadow-[0_35px_100px_-30px_rgba(22,42,70,.35)]"><Image src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=85" alt="Pflegefachkraft begleitet eine ältere Dame einfühlsam" fill priority sizes="(max-width: 1024px) 90vw, 45vw" className="object-cover" /></div><div className="glass absolute -bottom-7 -left-4 max-w-[280px] rounded-3xl p-5 sm:-left-10"><div className="flex items-center gap-4"><div className="grid size-12 place-items-center rounded-2xl bg-primary text-white"><HeartHandshake /></div><div><p className="text-xs font-bold tracking-widest text-primary uppercase">Unser Versprechen</p><p className="mt-1 font-bold leading-5">Fachkompetenz mit echter Menschlichkeit</p></div></div></div><div className="glass absolute -right-3 top-10 rounded-2xl px-4 py-3 text-sm font-bold sm:-right-8"><span className="mr-2 inline-block size-2 rounded-full bg-emerald-500" />Für Sie erreichbar</div></div></Reveal>
+      </div>
+    </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    <section className="border-y bg-white py-8"><div className="container-shell grid gap-5 text-center sm:grid-cols-3"><div><p className="text-2xl font-bold text-primary">Seit 2017</p><p className="mt-1 text-xs font-semibold tracking-wide text-muted-foreground uppercase">für Menschen da</p></div><div className="border-border sm:border-x"><p className="text-2xl font-bold text-primary">Bis zu 24/7</p><p className="mt-1 text-xs font-semibold tracking-wide text-muted-foreground uppercase">bedarfsgerechte Versorgung</p></div><div><p className="text-2xl font-bold text-primary">Bis 150 km</p><p className="mt-1 text-xs font-semibold tracking-wide text-muted-foreground uppercase">öffentlich genanntes Einsatzgebiet</p></div></div></section>
+
+    <section className="section-space"><div className="container-shell"><Reveal><SectionHeading eyebrow="Warum Maria Schnee?" title="Weil gute Pflege mehr braucht als einen Plan." description="Sie braucht Menschen, die fachlich sicher handeln, aufmerksam zuhören und den Alltag der gesamten Familie im Blick behalten." align="center" /></Reveal><div className="mt-14 grid gap-5 lg:grid-cols-3">{trustPoints.map((point, i) => { const Icon = point.icon; return <Reveal key={point.title} delay={i * .08}><Card className="h-full border-0 bg-white shadow-[0_20px_70px_-45px_rgba(20,40,70,.4)]"><CardContent className="p-8"><div className="grid size-12 place-items-center rounded-2xl bg-secondary text-sky-700"><Icon /></div><h3 className="mt-7 text-xl font-bold">{point.title}</h3><p className="mt-3 text-sm leading-7 text-muted-foreground">{point.text}</p></CardContent></Card></Reveal> })}</div></div></section>
+
+    <section className="section-space bg-slate-50"><div className="container-shell"><Reveal><SectionHeading eyebrow="Unsere Leistungen" title="Versorgung, die sich dem Leben anpasst – nicht umgekehrt." description="Von verlässlicher Unterstützung im Alltag bis zur anspruchsvollen außerklinischen Intensivpflege entwickeln wir Lösungen rund um den einzelnen Menschen." /></Reveal><div className="mt-14"><ServiceGrid /></div></div></section>
+
+    <section className="section-space overflow-hidden"><div className="container-shell grid items-center gap-14 lg:grid-cols-2"><Reveal><div className="relative"><div className="aspect-[4/3] overflow-hidden rounded-[2rem]"><Image src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85" alt="Pflegefachkraft im persönlichen Beratungsgespräch" fill={false} width={1200} height={900} sizes="(max-width:1024px) 100vw, 50vw" className="h-full w-full object-cover" /></div><div className="absolute -bottom-6 -right-3 rounded-3xl bg-primary p-6 text-white shadow-xl sm:-right-6"><p className="text-3xl font-bold">4 Schritte</p><p className="mt-1 text-sm text-white/75">zu Ihrer Versorgung</p></div></div></Reveal><Reveal delay={.1}><SectionHeading eyebrow="So funktioniert die Zusammenarbeit" title="Klarheit von Anfang an. Begleitung auf jedem Schritt." /><div className="mt-9 space-y-7">{[["01", "Erstes Kennenlernen", "Sie schildern uns unverbindlich Ihre Situation, Fragen und Wünsche."],["02", "Bedarf gemeinsam erfassen", "Wir betrachten Pflegebedarf, Alltag, medizinische Anforderungen und familiäre Ressourcen."],["03", "Versorgung sorgfältig planen", "Pflegeziele, Tagesstruktur, Einsatzzeiten und Abstimmungen werden transparent festgelegt."],["04", "Sicher begleitet starten", "Unser Team koordiniert den Start und bleibt für Veränderungen und Rückfragen ansprechbar."]].map((step) => <div key={step[0]} className="flex gap-5"><span className="grid size-11 shrink-0 place-items-center rounded-full border bg-white text-xs font-bold text-primary shadow-sm">{step[0]}</span><div><h3 className="font-bold">{step[1]}</h3><p className="mt-1 text-sm leading-6 text-muted-foreground">{step[2]}</p></div></div>)}</div></Reveal></div></section>
+
+    <section className="section-space bg-slate-950 text-white"><div className="container-shell grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-center"><Reveal><p className="eyebrow text-sky-300">Unser Team</p><h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">Kompetenz zeigt sich dort, wo Menschen Verantwortung übernehmen.</h2><p className="mt-6 text-base leading-7 text-white/65">Zum Team gehören laut Unternehmen Fachkräfte aus der Anästhesie- und Intensivpflege, Pflegeexperten für Beatmungspflege, Gesundheits- und Krankenpflege, Altenpflege, Palliative Care sowie Assistenz-, Betreuungs- und Hauswirtschaftskräfte.</p><Button asChild variant="outline" className="mt-8 rounded-full border-white/20 bg-white/5 text-white hover:bg-white hover:text-slate-950"><Link href="/ueber-uns">Mehr über uns <ArrowRight /></Link></Button></Reveal><Reveal delay={.1}><div className="grid grid-cols-2 gap-4"><div className="relative col-span-2 aspect-[16/8] overflow-hidden rounded-3xl"><Image src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1400&q=85" alt="Professionelle Pflegefachkraft" fill sizes="(max-width:1024px) 100vw, 55vw" className="object-cover object-top" /></div><div className="rounded-3xl bg-white/7 p-6"><p className="text-3xl font-bold text-pink-400">Mehrsprachig</p><p className="mt-2 text-sm leading-6 text-white/55">Beratung unter anderem auf Deutsch, Englisch, Kroatisch, Serbisch und Spanisch.</p></div><div className="rounded-3xl bg-sky-400/10 p-6"><p className="text-3xl font-bold text-sky-300">Kontinuierlich</p><p className="mt-2 text-sm leading-6 text-white/55">Schulungen für sicheren Umgang mit Medizinprodukten und Behandlungspflege.</p></div></div></Reveal></div></section>
+
+    <section className="section-space bg-sky-50/60"><div className="container-shell"><Reveal><SectionHeading eyebrow="Bewertungen" title="Vertrauen entsteht durch Erfahrungen." description="Öffentlich verfügbare Rückmeldungen geben einen Einblick in die Zusammenarbeit mit Maria Schnee." /></Reveal><div className="mt-12"><TestimonialCarousel /></div></div></section>
+
+    <section className="section-space"><div className="container-shell"><Reveal><SectionHeading eyebrow="Häufige Fragen" title="Orientierung für Ihre nächsten Schritte." align="center" /></Reveal><div className="mx-auto mt-12 max-w-4xl"><FaqList limit={5} /></div><div className="mt-8 text-center"><Button asChild variant="outline" className="rounded-full"><Link href="/faq">Alle Fragen ansehen <ArrowRight /></Link></Button></div></div></section>
+
+    <section className="section-space bg-slate-50"><div className="container-shell"><div className="grid overflow-hidden rounded-[2rem] border bg-white shadow-sm lg:grid-cols-2"><div className="p-7 sm:p-10 lg:p-12"><div className="eyebrow"><MapPin className="size-4" />Einsatzgebiet & Standort</div><h2 className="text-3xl font-semibold tracking-tight">Aus Waldkraiburg für die Region.</h2><p className="mt-5 text-base leading-7 text-muted-foreground">Maria Schnee nennt für die außerklinische Versorgung ein Einsatzgebiet von Waldkraiburg bis zu einem Radius von 150 Kilometern. Die tatsächliche Verfügbarkeit wird individuell geprüft.</p><address className="mt-8 not-italic"><p className="font-bold">{site.name}</p><p className="mt-2 text-sm leading-6 text-muted-foreground">{site.address}</p></address><Button asChild variant="outline" className="mt-7 rounded-full"><a href="https://www.google.com/maps/dir/?api=1&destination=Berliner+Stra%C3%9Fe+33a%2C+84478+Waldkraiburg" target="_blank" rel="noreferrer">Route planen <ArrowRight /></a></Button></div><ConsentMap /></div></div></section>
+
+    <section className="section-space"><div className="container-shell grid gap-12 lg:grid-cols-[.8fr_1.2fr]"><Reveal><SectionHeading eyebrow="Kontakt" title="Erzählen Sie uns, was Sie gerade brauchen." description="Wir nehmen uns Zeit für Ihre Situation und melden uns so bald wie möglich persönlich bei Ihnen." /><div className="mt-8 rounded-3xl bg-secondary p-6"><p className="text-sm font-bold">Lieber direkt sprechen?</p><a href={`tel:${site.phone}`} className="mt-2 inline-flex items-center gap-2 text-xl font-bold text-primary"><Phone className="size-5" />{site.phoneDisplay}</a><p className="mt-3 text-xs text-muted-foreground">Bei medizinischen Notfällen wählen Sie bitte 112.</p></div></Reveal><Reveal delay={.1}><div className="rounded-[2rem] border bg-slate-50 p-6 sm:p-9"><ContactForm /></div></Reveal></div></section>
+  </>;
 }

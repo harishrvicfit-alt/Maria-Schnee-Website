@@ -1,0 +1,4 @@
+import Link from "next/link";
+import { ArrowLeft, Home } from "lucide-react";
+import { Button } from "@/components/ui/button";
+export default function NotFound() { return <section className="soft-grid grid min-h-[70vh] place-items-center px-5 py-20"><div className="max-w-xl text-center"><p className="text-8xl font-bold tracking-tighter text-primary/15">404</p><h1 className="-mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">Diese Seite wurde nicht gefunden.</h1><p className="mt-5 leading-7 text-muted-foreground">Vielleicht wurde die Adresse geändert oder der Link ist nicht mehr aktuell. Auf der Startseite finden Sie alle wichtigen Informationen.</p><div className="mt-8 flex justify-center gap-3"><Button asChild className="rounded-full"><Link href="/"><Home /> Zur Startseite</Link></Button><Button asChild variant="outline" className="rounded-full"><Link href="/kontakt"><ArrowLeft /> Kontakt</Link></Button></div></div></section>; }

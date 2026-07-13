@@ -1,0 +1,3 @@
+import type { MetadataRoute } from "next";
+const routes = ["", "/ueber-uns", "/leistungen", "/ambulante-pflege", "/intensivpflege", "/kinderintensivpflege", "/erwachsenenpflege", "/24-stunden-betreuung", "/pflegeberatung", "/karriere", "/faq", "/kontakt", "/impressum", "/datenschutz"];
+export default function sitemap(): MetadataRoute.Sitemap { return routes.map((route) => ({ url: `https://pflegedienst-mariaschnee.de${route}`, lastModified: new Date(), changeFrequency: route === "" ? "weekly" : "monthly", priority: route === "" ? 1 : route.includes("pflege") || route === "/leistungen" ? .8 : .6 })); }
