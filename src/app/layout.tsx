@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Newsreader } from "next/font/google";
 import { Toaster } from "sonner";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -10,6 +10,7 @@ import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const newsreader = Newsreader({ variable: "--font-newsreader", subsets: ["latin"], style: ["normal", "italic"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://pflegedienst-mariaschnee.de"),
@@ -33,7 +34,7 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, them
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="de" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="de" className={`${geistSans.variable} ${geistMono.variable} ${newsreader.variable}`}>
       <body>
         <a href="#hauptinhalt" className="fixed left-4 top-3 z-[100] -translate-y-20 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background transition-transform focus:translate-y-0">Zum Hauptinhalt</a>
         <GlobalStructuredData />

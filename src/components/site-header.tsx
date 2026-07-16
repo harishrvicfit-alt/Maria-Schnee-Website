@@ -12,21 +12,21 @@ import { cn } from "@/lib/utils";
 export function SiteHeader() {
   const pathname = usePathname();
   return (
-    <header className="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur-xl">
-      <div className="hidden border-b border-border/60 bg-slate-950 text-white lg:block">
+    <header className="sticky top-0 z-50 border-b border-border/60 bg-white/88 shadow-[0_10px_50px_-35px_rgba(8,22,43,.45)] backdrop-blur-2xl">
+      <div className="hidden bg-[#091523] text-white lg:block">
         <div className="container-shell flex h-9 items-center justify-between text-xs">
-          <p>Pflege mit Fachkompetenz und Menschlichkeit – seit 2017</p>
+          <p className="flex items-center gap-2 text-white/70"><span className="size-1.5 rounded-full bg-emerald-400 shadow-[0_0_0_4px_rgba(52,211,153,.12)]" />Pflege mit Fachkompetenz und Menschlichkeit – seit 2017</p>
           <div className="flex items-center gap-6"><span>{site.address}</span><a href={`tel:${site.standby}`} className="font-semibold hover:text-pink-300">Rufbereitschaft: {site.standbyDisplay}</a></div>
         </div>
       </div>
-      <div className="container-shell flex h-[86px] items-center justify-between gap-6">
+      <div className="container-shell flex h-[82px] items-center justify-between gap-5">
         <BrandLogo />
         <nav aria-label="Hauptnavigation" className="hidden items-center gap-1 lg:flex">
           {navigation.map((item) => (
-            <Link key={item.href} href={item.href} className={cn("rounded-full px-3.5 py-2 text-sm font-semibold transition-colors hover:bg-secondary hover:text-primary", pathname === item.href ? "bg-secondary text-primary" : "text-foreground/78")}>{item.label}</Link>
+            <Link key={item.href} href={item.href} className={cn("relative rounded-full px-3.5 py-2 text-[.82rem] font-semibold transition-colors hover:text-primary", pathname === item.href ? "text-primary after:absolute after:inset-x-4 after:-bottom-1 after:h-0.5 after:rounded-full after:bg-primary" : "text-foreground/72")}>{item.label}</Link>
           ))}
         </nav>
-        <Button asChild className="hidden h-11 rounded-full px-5 shadow-lg shadow-primary/15 xl:inline-flex"><Link href="/kontakt">Kostenlos beraten lassen</Link></Button>
+        <Button asChild className="hidden h-11 rounded-full px-5 shadow-[0_14px_35px_-14px_rgba(223,0,122,.65)] xl:inline-flex"><Link href="/kontakt">Beratung anfragen</Link></Button>
         <Sheet>
           <SheetTrigger asChild><Button variant="outline" size="icon" className="rounded-full lg:hidden" aria-label="Navigation öffnen"><Menu /></Button></SheetTrigger>
           <SheetContent side="right" className="w-[90vw] max-w-sm p-0">
