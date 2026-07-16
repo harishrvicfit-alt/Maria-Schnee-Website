@@ -19,7 +19,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-6"><span>{site.address}</span><a href={`tel:${site.standby}`} className="font-semibold hover:text-pink-300">Rufbereitschaft: {site.standbyDisplay}</a></div>
         </div>
       </div>
-      <div className="container-shell flex h-[82px] items-center justify-between gap-5">
+      <div className="container-shell flex h-[76px] items-center justify-between gap-2 sm:h-[82px] sm:gap-5">
         <BrandLogo />
         <nav aria-label="Hauptnavigation" className="hidden items-center gap-1 lg:flex">
           {navigation.map((item) => (
@@ -31,7 +31,7 @@ export function SiteHeader() {
           <SheetTrigger asChild><Button variant="outline" size="icon" className="rounded-full lg:hidden" aria-label="Navigation öffnen"><Menu /></Button></SheetTrigger>
           <SheetContent side="right" className="w-[90vw] max-w-sm p-0">
             <SheetTitle className="sr-only">Navigation</SheetTitle>
-            <div className="flex items-center justify-between border-b px-5 py-3"><BrandLogo className="h-16 w-44" /><SheetClose className="grid size-10 place-items-center rounded-full border" aria-label="Navigation schließen"><X className="size-5" /></SheetClose></div>
+            <div className="flex items-center justify-between gap-2 border-b px-4 py-3 sm:px-5"><BrandLogo /><SheetClose className="grid size-10 shrink-0 place-items-center rounded-full border" aria-label="Navigation schließen"><X className="size-5" /></SheetClose></div>
             <nav className="flex flex-col gap-1 p-5" aria-label="Mobile Navigation">
               {navigation.map((item) => <SheetClose asChild key={item.href}><Link href={item.href} className={cn("rounded-xl px-4 py-3.5 text-base font-semibold", pathname === item.href ? "bg-secondary text-primary" : "hover:bg-muted")}>{item.label}</Link></SheetClose>)}
             </nav>
