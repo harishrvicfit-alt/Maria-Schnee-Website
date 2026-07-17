@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { CookieBanner } from "@/components/cookie-banner";
 import { FloatingContact } from "@/components/floating-contact";
 import { GlobalStructuredData } from "@/components/structured-data";
+import { SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -13,13 +14,21 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 const newsreader = Newsreader({ variable: "--font-newsreader", subsets: ["latin"], style: ["normal", "italic"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mariaschnee-pflege.de"),
+  metadataBase: new URL(SITE_URL),
+  applicationName: "Maria Schnee Pflegedienst",
   title: { default: "Maria Schnee | Ambulanter & Intensivpflegedienst Waldkraiburg", template: "%s | Maria Schnee" },
   description: "Ambulante Pflege, außerklinische Intensivpflege und Kinderintensivpflege in Waldkraiburg und Umgebung – persönlich, fachlich und familienzentriert.",
-  keywords: ["Pflegedienst Waldkraiburg", "Ambulante Pflege", "Intensivpflege Bayern", "Kinderintensivpflege", "24 Stunden Pflege", "Pflegeberatung"],
+  keywords: ["Pflegedienst Waldkraiburg", "Ambulante Pflege Waldkraiburg", "Außerklinische Intensivpflege", "Intensivpflege Bayern", "Kinderintensivpflege", "Erwachsenenpflege", "24 Stunden Pflege", "Pflegeberatung Waldkraiburg"],
   authors: [{ name: "Ambulanter & Intensivpflegedienst Maria Schnee GmbH" }],
   creator: "Ambulanter & Intensivpflegedienst Maria Schnee GmbH",
-  alternates: { canonical: "/" },
+  publisher: "Ambulanter & Intensivpflegedienst Maria Schnee GmbH",
+  category: "Gesundheit und Pflege",
+  referrer: "origin-when-cross-origin",
+  alternates: { canonical: "/", languages: { "de-DE": "/", "x-default": "/" } },
+  icons: {
+    icon: [{ url: "/maria-schnee-logo.png", type: "image/png" }],
+    apple: [{ url: "/maria-schnee-logo.png", type: "image/png" }],
+  },
   openGraph: {
     type: "website", locale: "de_DE", url: "/", siteName: "Maria Schnee Pflegedienst",
     title: "Pflege, die Sicherheit gibt. Nähe, die bleibt.",
@@ -27,7 +36,7 @@ export const metadata: Metadata = {
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Maria Schnee – Ambulanter & Intensivpflegedienst" }],
   },
   twitter: { card: "summary_large_image", title: "Maria Schnee Pflegedienst", description: "Ambulante und außerklinische Intensivpflege aus Waldkraiburg.", images: ["/opengraph-image"] },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
 };
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#df007a" };

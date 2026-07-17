@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
-/* eslint-disable @next/next/no-img-element -- ImageResponse unterstützt hier bewusst ein natives img-Element. */
+/* eslint-disable @next/next/no-img-element -- ImageResponse benötigt hier bewusst ein natives img-Element. */
 export const alt = "Maria Schnee – Ambulanter & Intensivpflegedienst";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
