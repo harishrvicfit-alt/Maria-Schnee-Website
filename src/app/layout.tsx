@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 const newsreader = Newsreader({ variable: "--font-newsreader", subsets: ["latin"], style: ["normal", "italic"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pflegedienst-mariaschnee.de"),
+  metadataBase: new URL("https://mariaschnee-pflege.de"),
   title: { default: "Maria Schnee | Ambulanter & Intensivpflegedienst Waldkraiburg", template: "%s | Maria Schnee" },
   description: "Ambulante Pflege, außerklinische Intensivpflege und Kinderintensivpflege in Waldkraiburg und Umgebung – persönlich, fachlich und familienzentriert.",
   keywords: ["Pflegedienst Waldkraiburg", "Ambulante Pflege", "Intensivpflege Bayern", "Kinderintensivpflege", "24 Stunden Pflege", "Pflegeberatung"],

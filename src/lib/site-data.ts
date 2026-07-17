@@ -12,7 +12,7 @@ export const site = {
   standbyDisplay: "0174 271 40 73",
   standby: "+491742714073",
   email: "verwaltung@maria-schnee.de",
-  url: "https://pflegedienst-mariaschnee.de",
+  url: "https://mariaschnee-pflege.de",
   founded: "2017",
   director: "Amela Katava",
 };
