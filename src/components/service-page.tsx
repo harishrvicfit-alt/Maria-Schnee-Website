@@ -8,8 +8,153 @@ import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { site } from "@/lib/site-data";
 
-type Props = { eyebrow: string; title: string; description: string; current: string; introTitle: string; intro: string[]; image: string; imageAlt: string; benefits: string[]; detailTitle: string; detailText: string; process?: string[] };
+type Props = {
+  path: `/${string}`;
+  eyebrow: string;
+  title: string;
+  description: string;
+  current: string;
+  introTitle: string;
+  intro: string[];
+  image: string;
+  imageAlt: string;
+  benefits: string[];
+  detailTitle: string;
+  detailText: string;
+  process?: string[];
+};
 
 export function ServicePage(props: Props) {
-  return <><PageHero eyebrow={props.eyebrow} title={props.title} description={props.description} current={props.current} /><section className="section-space"><div className="container-shell grid items-center gap-14 lg:grid-cols-2"><Reveal><div className="relative aspect-[4/3] overflow-hidden rounded-[2rem]"><Image src={props.image} alt={props.imageAlt} fill sizes="(max-width:1024px) 100vw, 50vw" className="object-cover" /></div></Reveal><Reveal delay={.08}><SectionHeading eyebrow="Individuell versorgt" title={props.introTitle} />{props.intro.map((paragraph) => <p key={paragraph} className="mt-5 text-base leading-8 text-muted-foreground">{paragraph}</p>)}<div className="mt-8 flex flex-wrap gap-3"><Button asChild className="rounded-full"><Link href="/kontakt">Beratung anfragen</Link></Button><Button asChild variant="outline" className="rounded-full"><a href={`tel:${site.phone}`}><Phone /> Direkt anrufen</a></Button></div></Reveal></div></section><section className="section-space bg-slate-50"><div className="container-shell"><Reveal><SectionHeading eyebrow="Leistungsbausteine" title="Was die Versorgung umfassen kann" description="Welche Leistungen tatsächlich erforderlich und verordnungsfähig sind, wird immer individuell und in Abstimmung mit den zuständigen Beteiligten geklärt." /></Reveal><div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{props.benefits.map((benefit, index) => <Reveal key={benefit} delay={(index % 3) * .05}><div className="flex h-full gap-4 rounded-2xl border bg-white p-5"><span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-primary/10 text-primary"><Check className="size-4" /></span><p className="text-sm font-semibold leading-6">{benefit}</p></div></Reveal>)}</div></div></section><section className="section-space"><div className="container-shell grid gap-12 lg:grid-cols-[.75fr_1.25fr]"><Reveal><SectionHeading eyebrow="Unser Verständnis" title={props.detailTitle} /></Reveal><Reveal delay={.08}><p className="text-lg leading-8 text-muted-foreground">{props.detailText}</p>{props.process ? <ol className="mt-9 space-y-5">{props.process.map((step, i) => <li key={step} className="flex gap-4"><span className="grid size-9 shrink-0 place-items-center rounded-full bg-slate-950 text-xs font-bold text-white">{i + 1}</span><p className="pt-1.5 text-sm font-semibold">{step}</p></li>)}</ol> : null}</Reveal></div></section><CtaSection /></>;
+  const serviceStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${site.url}${props.path}#service`,
+    name: props.current,
+    serviceType: props.eyebrow,
+    description: props.description,
+    url: `${site.url}${props.path}`,
+    inLanguage: "de-DE",
+    areaServed: {
+      "@type": "AdministrativeArea",
+      name: "Waldkraiburg und Umgebung",
+    },
+    provider: {
+      "@type": "MedicalBusiness",
+      "@id": `${site.url}/#medical-business`,
+      name: site.name,
+      telephone: site.phone,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: site.street,
+        postalCode: site.postalCode,
+        addressLocality: site.city,
+        addressCountry: "DE",
+      },
+    },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceStructuredData).replaceAll("<", "\\u003c") }}
+      />
+      <PageHero
+        eyebrow={props.eyebrow}
+        title={props.title}
+        description={props.description}
+        current={props.current}
+      />
+      <section className="section-space">
+        <div className="container-shell grid items-center gap-14 lg:grid-cols-2">
+          <Reveal>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem]">
+              <Image
+                src={props.image}
+                alt={props.imageAlt}
+                fill
+                sizes="(max-width:1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <SectionHeading
+              eyebrow="Individuell versorgt"
+              title={props.introTitle}
+            />
+            {props.intro.map((paragraph) => (
+              <p
+                key={paragraph}
+                className="mt-5 text-base leading-8 text-muted-foreground"
+              >
+                {paragraph}
+              </p>
+            ))}
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button asChild className="rounded-full">
+                <Link href="/kontakt">Beratung anfragen</Link>
+              </Button>
+              <Button asChild variant="outline" className="rounded-full">
+                <a href={`tel:${site.phone}`}>
+                  <Phone /> Direkt anrufen
+                </a>
+              </Button>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+      <section className="section-space bg-slate-50">
+        <div className="container-shell">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Leistungsbausteine"
+              title="Was die Versorgung umfassen kann"
+              description="Welche Leistungen tatsächlich erforderlich und verordnungsfähig sind, wird immer individuell und in Abstimmung mit den zuständigen Beteiligten geklärt."
+            />
+          </Reveal>
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {props.benefits.map((benefit, index) => (
+              <Reveal key={benefit} delay={(index % 3) * 0.05}>
+                <div className="flex h-full gap-4 rounded-2xl border bg-white p-5">
+                  <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-primary/10 text-primary">
+                    <Check className="size-4" />
+                  </span>
+                  <p className="text-sm font-semibold leading-6">{benefit}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="section-space">
+        <div className="container-shell grid gap-12 lg:grid-cols-[.75fr_1.25fr]">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Unser Verständnis"
+              title={props.detailTitle}
+            />
+          </Reveal>
+          <Reveal delay={0.08}>
+            <p className="text-lg leading-8 text-muted-foreground">
+              {props.detailText}
+            </p>
+            {props.process ? (
+              <ol className="mt-9 space-y-5">
+                {props.process.map((step, i) => (
+                  <li key={step} className="flex gap-4">
+                    <span className="grid size-9 shrink-0 place-items-center rounded-full bg-slate-950 text-xs font-bold text-white">
+                      {i + 1}
+                    </span>
+                    <p className="pt-1.5 text-sm font-semibold">{step}</p>
+                  </li>
+                ))}
+              </ol>
+            ) : null}
+          </Reveal>
+        </div>
+      </section>
+      <CtaSection />
+    </>
+  );
 }

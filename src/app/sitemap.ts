@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo";
 
-const lastModified = new Date("2026-07-17T00:00:00.000Z");
+const lastModified = new Date("2026-07-18T00:00:00.000Z");
 
 const routes = [
   { path: "", changeFrequency: "weekly", priority: 1 },
