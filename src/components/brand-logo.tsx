@@ -14,7 +14,6 @@ export function BrandLogo({
   return (
     <Link
       href="/"
-      aria-label="Maria Schnee Ambulanter & Intensivpflegedienst – Startseite"
       className={cn(
         "group flex h-14 w-[165px] shrink-0 items-center gap-2.5 min-[360px]:w-[214px] sm:h-[62px] sm:w-[222px] sm:gap-3",
         className,

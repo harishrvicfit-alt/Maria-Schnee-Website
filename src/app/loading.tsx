@@ -1,2 +1,0 @@
-import { Skeleton } from "@/components/ui/skeleton";
-export default function Loading() { return <div className="container-shell py-20"><Skeleton className="h-5 w-40 rounded-full" /><Skeleton className="mt-7 h-16 max-w-3xl rounded-2xl" /><Skeleton className="mt-4 h-7 max-w-2xl rounded-xl" /><div className="mt-14 grid gap-5 md:grid-cols-3"><Skeleton className="h-72 rounded-3xl" /><Skeleton className="h-72 rounded-3xl" /><Skeleton className="h-72 rounded-3xl" /></div></div>; }
