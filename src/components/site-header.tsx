@@ -29,7 +29,7 @@ export function SiteHeader() {
         <Button asChild className="hidden h-11 rounded-full px-5 shadow-[0_14px_35px_-14px_rgba(223,0,122,.65)] xl:inline-flex"><Link href="/kontakt">Beratung anfragen</Link></Button>
         <Sheet>
           <SheetTrigger asChild><Button variant="outline" size="icon" className="rounded-full lg:hidden" aria-label="Navigation öffnen"><Menu /></Button></SheetTrigger>
-          <SheetContent side="right" className="w-[90vw] max-w-sm p-0">
+          <SheetContent side="right" showCloseButton={false} className="w-[90vw] max-w-sm p-0">
             <SheetTitle className="sr-only">Navigation</SheetTitle>
             <div className="flex items-center justify-between gap-2 border-b px-4 py-3 sm:px-5"><BrandLogo /><SheetClose className="grid size-10 shrink-0 place-items-center rounded-full border" aria-label="Navigation schließen"><X className="size-5" /></SheetClose></div>
             <nav className="flex flex-col gap-1 p-5" aria-label="Mobile Navigation">
