@@ -37,6 +37,11 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image", title: "Maria Schnee Pflegedienst", description: "Ambulante und außerklinische Intensivpflege aus Waldkraiburg.", images: ["/opengraph-image"] },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
+  verification: {
+    other: {
+      "msvalidate.01": "B7F59012AF39D79EC81DC030800D604A",
+    },
+  },
 };
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#df007a" };
