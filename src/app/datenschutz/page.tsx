@@ -69,7 +69,18 @@ export default function DatenschutzPage() {
                 Formularnachrichten zugestellt.
               </p>
             </Legal>
-            <Legal title="6. Cookies und lokale Speicherung">
+            <Legal title="6. Beschwerden und Anregungen">
+              <p>
+                Das Formular für Beschwerden und Anregungen kann anonym genutzt
+                werden. Bei aktivierter anonymer Übermittlung werden Name,
+                E-Mail-Adresse und Telefonnummer nicht an den Empfänger
+                übertragen. Freiwillig im Nachrichtentext genannte
+                personenbezogene Daten werden zur Prüfung und Bearbeitung der
+                Rückmeldung verarbeitet. Rechtsgrundlage ist Art. 6 Abs. 1 lit.
+                f DSGVO sowie gegebenenfalls Art. 6 Abs. 1 lit. a DSGVO.
+              </p>
+            </Legal>
+            <Legal title="7. Cookies und lokale Speicherung">
               <p>
                 Diese Website speichert Ihre Auswahl im Cookie-Banner lokal in
                 Ihrem Browser. Die Speicherung ist technisch notwendig, um Ihre
@@ -78,7 +89,7 @@ export default function DatenschutzPage() {
                 eingerichtet.
               </p>
             </Legal>
-            <Legal title="7. Google Maps">
+            <Legal title="8. Google Maps">
               <p>
                 Die Karte wird erst nach Ihrem aktiven Klick geladen. Dann kann
                 eine Verbindung zu Google-Servern hergestellt und insbesondere
@@ -88,14 +99,14 @@ export default function DatenschutzPage() {
                 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG.
               </p>
             </Legal>
-          <Legal title="8. Bildinhalte">
-            <p>
-              Die auf dieser Website verwendeten Bilddateien werden lokal über
-              den Webserver bereitgestellt. Beim Laden dieser Bilder wird keine
-              Verbindung zu externen Bildplattformen hergestellt.
-            </p>
-          </Legal>
-            <Legal title="9. Ihre Rechte">
+            <Legal title="9. Bildinhalte">
+              <p>
+                Die auf dieser Website verwendeten Bilddateien werden lokal über
+                den Webserver bereitgestellt. Beim Laden dieser Bilder wird
+                keine Verbindung zu externen Bildplattformen hergestellt.
+              </p>
+            </Legal>
+            <Legal title="10. Ihre Rechte">
               <p>
                 Sie haben im Rahmen der gesetzlichen Voraussetzungen das Recht
                 auf Auskunft, Berichtigung, Löschung, Einschränkung der
@@ -105,14 +116,14 @@ export default function DatenschutzPage() {
                 zuständigen Datenschutzaufsichtsbehörde.
               </p>
             </Legal>
-            <Legal title="10. Speicherdauer">
+            <Legal title="11. Speicherdauer">
               <p>
                 Wir speichern personenbezogene Daten nur so lange, wie dies für
                 den jeweiligen Zweck erforderlich ist oder gesetzliche
                 Aufbewahrungspflichten bestehen.
               </p>
             </Legal>
-            <Legal title="11. Sicherheit">
+            <Legal title="12. Sicherheit">
               <p>
                 Diese Website ist für eine verschlüsselte Übertragung per TLS
                 vorgesehen. Bitte beachten Sie, dass eine Datenübertragung im
@@ -120,7 +131,7 @@ export default function DatenschutzPage() {
                 kann.
               </p>
             </Legal>
-            <Legal title="12. Pflicht zur abschließenden Prüfung">
+            <Legal title="13. Pflicht zur abschließenden Prüfung">
               <p className="rounded-2xl border border-amber-200 bg-amber-50 p-5 text-amber-900">
                 Hosting, Formularversand, eingesetzte Dienstleister,
                 Löschfristen und betriebliche Datenschutzprozesse sind
