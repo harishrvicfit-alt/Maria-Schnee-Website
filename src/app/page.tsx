@@ -18,7 +18,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { ServiceGrid } from "@/components/service-grid";
 import { TestimonialCarousel } from "@/components/testimonial-carousel";
 import { BrandFeather } from "@/components/brand-feather";
-import { trustPoints, site } from "@/lib/site-data";
+import { services, trustPoints, site } from "@/lib/site-data";
 
 export default function HomePage() {
   return (
@@ -31,12 +31,37 @@ export default function HomePage() {
         <div className="container-shell grid min-h-[760px] items-center gap-14 py-14 sm:gap-16 sm:py-20 lg:min-h-[790px] lg:grid-cols-[1.02fr_.98fr] lg:py-24">
           <div>
             <div className="relative z-10">
-              <div className="mb-7 inline-flex max-w-full items-center gap-2 rounded-3xl border border-sky-200/70 bg-white/80 py-2 pl-2 pr-3 text-[.7rem] font-semibold leading-5 text-slate-600 shadow-sm backdrop-blur-xl sm:gap-3 sm:rounded-full sm:pr-4 sm:text-xs">
+              <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-3xl border border-sky-200/70 bg-white/80 py-2 pl-2 pr-3 text-[.7rem] font-semibold leading-5 text-slate-600 shadow-sm backdrop-blur-xl sm:gap-3 sm:rounded-full sm:pr-4 sm:text-xs">
                 <span className="grid size-7 shrink-0 place-items-center rounded-full bg-primary text-white">
                   <ShieldCheck className="size-3.5" />
                 </span>
                 <span>Pflege aus Waldkraiburg · persönlich seit 2017</span>
               </div>
+              <nav aria-label="Pflegeleistungen" className="mb-8 max-w-xl">
+                <p className="mb-3 text-[.64rem] font-bold tracking-[.16em] text-sky-700 uppercase sm:text-[.7rem]">
+                  Unsere Leistungen – direkt auswählen
+                </p>
+                <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
+                  {services.map((service, index) => {
+                    const Icon = service.icon;
+                    return (
+                      <Link
+                        key={service.href}
+                        href={service.href}
+                        className="group flex min-h-12 items-center gap-1.5 rounded-2xl border border-white/80 bg-white/75 px-2 py-2 text-[.625rem] font-bold leading-4 tracking-[-.01em] text-slate-700 shadow-[0_12px_35px_-25px_rgba(30,90,125,.55)] backdrop-blur-xl transition-all hover:-translate-y-0.5 hover:border-sky-200 hover:bg-white hover:text-primary focus-visible:-translate-y-0.5 sm:gap-3 sm:px-3 sm:text-xs sm:tracking-normal"
+                      >
+                        <span
+                          className={`grid size-7 shrink-0 place-items-center rounded-xl transition-colors sm:size-8 ${index % 2 === 0 ? "bg-sky-100 text-sky-700 group-hover:bg-sky-200" : "bg-pink-50 text-primary group-hover:bg-pink-100"}`}
+                        >
+                          <Icon className="size-3.5 sm:size-4" />
+                        </span>
+                        <span className="hyphens-none [overflow-wrap:normal]">{service.title}</span>
+                        <ArrowRight className="ml-auto hidden size-3.5 shrink-0 text-slate-300 transition-transform group-hover:translate-x-0.5 group-hover:text-primary sm:block" />
+                      </Link>
+                    );
+                  })}
+                </div>
+              </nav>
               <h1 className="text-balance text-[2.65rem] font-medium leading-[.98] tracking-[-0.055em] min-[375px]:text-[3rem] sm:text-6xl lg:text-[5.15rem]">
                 Pflege, die{" "}
                 <span className="font-editorial font-normal italic text-pink-400">
