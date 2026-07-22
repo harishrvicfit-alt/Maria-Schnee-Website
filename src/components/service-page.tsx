@@ -68,7 +68,9 @@ export function ServicePage(props: Props) {
       <section className="section-space">
         <div className="container-shell grid items-center gap-14 lg:grid-cols-2">
           <Reveal>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem]">
+            <div className="relative">
+              <div className="absolute -inset-5 -z-10 rounded-[3rem] bg-gradient-to-br from-sky-100 via-white to-pink-100/70 blur-xl" />
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[2.25rem] border-[7px] border-white shadow-[0_30px_80px_-35px_rgba(28,83,117,.45)] ring-1 ring-sky-100">
               <Image
                 src={props.image}
                 alt={props.imageAlt}
@@ -76,6 +78,8 @@ export function ServicePage(props: Props) {
                 sizes="(max-width:1024px) 100vw, 50vw"
                 className="object-cover"
               />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-sky-950/10 via-transparent to-white/5" />
+              </div>
             </div>
           </Reveal>
           <Reveal delay={0.08}>

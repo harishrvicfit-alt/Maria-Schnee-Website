@@ -19,8 +19,8 @@ export default function Page() {
         "Außerklinische Intensivpflege ermöglicht Erwachsenen mit komplexem medizinischem Bedarf ein Leben außerhalb der Klinik. Im Mittelpunkt stehen Sicherheit, verlässliche Abläufe und die größtmögliche persönliche Freiheit.",
         "Maria Schnee plant die Versorgung gemeinsam mit der pflegebedürftigen Person, Angehörigen und medizinischen Partnern. Tagesstruktur und Pflegeziele orientieren sich an vorhandenen Fähigkeiten, sozialen Ressourcen und individuellen Wünschen.",
       ]}
-      image="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=85"
-      imageAlt="Individuelle pflegerische Begleitung eines Erwachsenen"
+      image="/images/adult-balcony-wellbeing.webp"
+      imageAlt="Gemeinsames Pflanzen frischer Kräuter auf einem sonnigen Balkon"
       benefits={[
         "Individuelle 1:1-Versorgung",
         "Behandlungspflege und Krankenbeobachtung",

@@ -19,7 +19,7 @@ export default function Page() {
         "Ein Pflegefall bringt viele Fragen mit sich: Welche Unterstützung ist sinnvoll? Wie lässt sich der Alltag organisieren? Welche Leistungen kommen infrage? In einem persönlichen Gespräch erfasst Maria Schnee die Situation und entwickelt mit Ihnen eine tragfähige Perspektive.",
         "Laut Unternehmen werden auch kostenfreie Beratungsbesuche für Pflegenachweise nach § 37 Abs. 3 SGB XI angeboten.",
       ]}
-      image="https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=1200&q=85"
+      image="/images/care-consultation-hands.webp"
       imageAlt="Persönliches Beratungsgespräch zur Pflege"
       benefits={[
         "Unverbindliches Erstgespräch",

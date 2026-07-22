@@ -19,8 +19,8 @@ export default function Page() {
         "Bei intensivpflegebedürftigen Kindern und Jugendlichen betrifft die Versorgung immer die ganze Familie. Maria Schnee arbeitet deshalb familienzentriert und stimmt alle Schritte eng mit Eltern, behandelnden Ärzten und weiteren Beteiligten ab.",
         "Neben der Versorgung zuhause kann die pflegerische Begleitung auch in Kindergarten, Schule, Werkstatt oder Universität erfolgen – mit dem Ziel, Teilhabe und größtmögliche Selbstständigkeit zu unterstützen.",
       ]}
-      image="https://images.unsplash.com/photo-1602030028438-4cf153cbae9e?auto=format&fit=crop&w=1200&q=85"
-      imageAlt="Kind und Familie in vertrauter häuslicher Umgebung"
+      image="/images/child-creative-care.webp"
+      imageAlt="Kind und Begleitperson malen gemeinsam ein farbenfrohes Gartenbild"
       benefits={[
         "Häusliche Kinderintensivversorgung",
         "Heimbeatmung und Atemwegsmanagement",

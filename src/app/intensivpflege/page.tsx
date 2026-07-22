@@ -19,8 +19,8 @@ export default function Page() {
         "Die außerklinische Intensivpflege richtet sich an schwer pflegebedürftige Menschen mit entsprechendem intensivpflegerischem Bedarf. Maria Schnee bietet die Versorgung im häuslichen Umfeld so engmaschig an, wie es die individuelle Situation erfordert.",
         "Ein speziell abgestimmter Pflegeplan, permanente Beobachtung bei entsprechender Notwendigkeit und die enge Zusammenarbeit mit Ärzten, Kliniken und Therapeuten bilden die Grundlage.",
       ]}
-      image="https://images.unsplash.com/photo-1576765608866-5b51046452be?auto=format&fit=crop&w=1200&q=85"
-      imageAlt="Professionelle intensivpflegerische Versorgung"
+      image="/images/adult-balcony-wellbeing.webp"
+      imageAlt="Gemeinsames Pflanzen frischer Kräuter als Teil eines selbstbestimmten Alltags"
       benefits={[
         "Häusliche Intensivversorgung",
         "Invasive und nichtinvasive Beatmung",

@@ -40,7 +40,7 @@ export const faqs = [
   { question: "Ist eine Versorgung rund um die Uhr möglich?", answer: "Ja. Bei entsprechender medizinischer Notwendigkeit bietet Maria Schnee eine flexible Eins-zu-eins-Versorgung in häuslicher Umgebung bis zu 24 Stunden täglich und sieben Tage in der Woche an." },
   { question: "Übernimmt der Pflegedienst die Abstimmung mit Ärzten und Kliniken?", answer: "Ja. Die Pflege wird eng mit behandelnden Fachärzten, Hausärzten, Kliniken, Therapeuten und weiteren Beteiligten abgestimmt. Auf Wunsch begleitet das Team auch die Überleitung aus dem Krankenhaus nach Hause." },
   { question: "Werden Angehörige in die Pflege einbezogen?", answer: "Maria Schnee arbeitet familienzentriert. Angehörige werden auf Wunsch informiert, angeleitet und aktiv einbezogen. Im Rahmen einer Rückzugspflege kann die Familie schrittweise auf die Übernahme einzelner Tätigkeiten vorbereitet werden." },
-  { question: "In welchem Gebiet ist Maria Schnee tätig?", answer: "Der Pflegedienst ist in Waldkraiburg und nach eigener Angabe in einem Radius von bis zu 150 Kilometern tätig. Ob eine Versorgung an Ihrem Wohnort möglich ist, klärt das Team gerne direkt mit Ihnen." },
+  { question: "In welchem Gebiet ist Maria Schnee tätig?", answer: "Das reguläre Einsatzgebiet umfasst Waldkraiburg und einen Radius von bis zu 150 Kilometern. Auch darüber hinaus ist eine Versorgung nach individueller Abstimmung möglich. Ob eine Versorgung an Ihrem Wohnort möglich ist, klärt das Team gerne direkt mit Ihnen." },
   { question: "Bietet Maria Schnee Pflegeberatung nach § 37 Abs. 3 SGB XI an?", answer: "Ja. Beratungsbesuche für Pflegenachweise nach § 37 Abs. 3 SGB XI werden laut Unternehmen angeboten und sind für die versicherte Person kostenfrei." },
 ];
 

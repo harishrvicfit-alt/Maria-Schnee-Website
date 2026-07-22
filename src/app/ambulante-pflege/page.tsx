@@ -19,8 +19,8 @@ export default function Page() {
         "Ambulante Pflege unterstützt pflegebedürftige Menschen dabei, möglichst lange in ihrer gewohnten Umgebung zu leben. Art und Umfang der Leistungen richten sich nach Pflegegrad, persönlicher Situation und individuellen Bedürfnissen.",
         "Maria Schnee stimmt die Versorgung eng mit der pflegebedürftigen Person, Angehörigen, Ärzten und weiteren Fachkräften ab. Leistungen können medizinische, pflegerische, soziale und hauswirtschaftliche Bereiche umfassen.",
       ]}
-      image="https://images.unsplash.com/photo-1559234938-b60fff04894d?auto=format&fit=crop&w=1200&q=85"
-      imageAlt="Einfühlsame Unterstützung im häuslichen Umfeld"
+      image="/images/ambulant-healthy-breakfast.webp"
+      imageAlt="Gemeinsame Zubereitung eines gesunden Frühstücks im häuslichen Umfeld"
       benefits={[
         "Körperbezogene Pflegemaßnahmen",
         "Häusliche Krankenpflege",

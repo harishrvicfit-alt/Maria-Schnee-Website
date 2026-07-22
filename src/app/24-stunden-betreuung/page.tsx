@@ -19,8 +19,8 @@ export default function Page() {
         "Maria Schnee bietet bei entsprechender Notwendigkeit eine flexible Eins-zu-eins-Versorgung im häuslichen Umfeld bis zu 24 Stunden täglich und sieben Tage pro Woche an.",
         "Der konkrete Umfang richtet sich nach medizinischer Verordnung, Pflegebedarf und individueller Situation. Einsatzzeiten, Pflegeziele und Verantwortlichkeiten werden vor Beginn transparent abgestimmt.",
       ]}
-      image="https://images.unsplash.com/photo-1590105577767-e21a1067899f?auto=format&fit=crop&w=1200&q=85"
-      imageAlt="Verlässliche Pflege auch in der Nacht"
+      image="/images/support-evening-home.webp"
+      imageAlt="Ruhiges und vorbereitetes Zuhause am Abend"
       benefits={[
         "Versorgung bis zu 24 Stunden täglich",
         "Tag- und Nachtversorgung nach Bedarf",
