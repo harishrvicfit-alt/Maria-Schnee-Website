@@ -33,9 +33,9 @@ export function FloatingContact() {
           <div className="space-y-2">
             <a
               href={`tel:${site.phone}`}
-              className="flex items-center gap-3 rounded-2xl bg-slate-950 p-4 text-sm font-bold text-white"
+              className="flex items-center gap-3 rounded-2xl border border-sky-100 bg-sky-50 p-4 text-sm font-bold text-sky-900 transition-colors hover:bg-sky-100"
             >
-              <Phone className="size-5 text-sky-300" />
+              <Phone className="size-5 text-sky-600" />
               {site.phoneDisplay}
             </a>
             <a

@@ -23,15 +23,15 @@ import { trustPoints, site } from "@/lib/site-data";
 export default function HomePage() {
   return (
     <>
-      <section className="relative isolate min-h-[760px] overflow-hidden bg-[#091523] text-white lg:min-h-[790px]">
-        <div className="noise-overlay absolute inset-0 -z-10 opacity-[.045]" />
-        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_78%_30%,rgba(72,171,219,.22),transparent_27rem),radial-gradient(circle_at_36%_95%,rgba(223,0,122,.18),transparent_30rem)]" />
-        <div className="soft-grid absolute inset-0 -z-10 opacity-[.09] [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
-        <BrandFeather className="absolute -left-44 bottom-[-5rem] -z-10 w-[52rem] rotate-[8deg] text-white/[.035]" />
+      <section className="relative isolate min-h-[760px] overflow-hidden bg-[linear-gradient(135deg,#f8fcff_0%,#edf8fd_48%,#fff4fa_100%)] text-foreground lg:min-h-[790px]">
+        <div className="noise-overlay absolute inset-0 -z-10 opacity-[.018]" />
+        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_78%_30%,rgba(125,211,252,.28),transparent_27rem),radial-gradient(circle_at_36%_95%,rgba(244,114,182,.16),transparent_30rem)]" />
+        <div className="soft-grid absolute inset-0 -z-10 opacity-[.38] [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
+        <BrandFeather className="absolute -left-44 bottom-[-5rem] -z-10 w-[52rem] rotate-[8deg] text-sky-700/[.045]" />
         <div className="container-shell grid min-h-[760px] items-center gap-14 py-14 sm:gap-16 sm:py-20 lg:min-h-[790px] lg:grid-cols-[1.02fr_.98fr] lg:py-24">
           <div>
             <div className="relative z-10">
-              <div className="mb-7 inline-flex max-w-full items-center gap-2 rounded-3xl border border-white/10 bg-white/[.06] py-2 pl-2 pr-3 text-[.7rem] font-semibold leading-5 text-white/72 backdrop-blur-xl sm:gap-3 sm:rounded-full sm:pr-4 sm:text-xs">
+              <div className="mb-7 inline-flex max-w-full items-center gap-2 rounded-3xl border border-sky-200/70 bg-white/80 py-2 pl-2 pr-3 text-[.7rem] font-semibold leading-5 text-slate-600 shadow-sm backdrop-blur-xl sm:gap-3 sm:rounded-full sm:pr-4 sm:text-xs">
                 <span className="grid size-7 shrink-0 place-items-center rounded-full bg-primary text-white">
                   <ShieldCheck className="size-3.5" />
                 </span>
@@ -44,7 +44,7 @@ export default function HomePage() {
                 </span>{" "}
                 gibt. Nähe, die bleibt.
               </h1>
-              <p className="mt-7 max-w-xl text-balance text-base leading-7 text-white/62 sm:mt-8 sm:text-lg sm:leading-8">
+              <p className="mt-7 max-w-xl text-balance text-base leading-7 text-slate-600 sm:mt-8 sm:text-lg sm:leading-8">
                 Ambulante und außerklinische Intensivpflege für Kinder,
                 Jugendliche und Erwachsene – individuell geplant, fachlich
                 verlässlich und mitten im vertrauten Leben.
@@ -64,21 +64,21 @@ export default function HomePage() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="h-auto min-h-14 w-full whitespace-normal rounded-full border-white/15 bg-white/[.06] px-5 py-3 text-sm text-white backdrop-blur-xl hover:bg-white hover:text-slate-950 sm:w-auto sm:px-7 sm:text-base"
+                  className="h-auto min-h-14 w-full whitespace-normal rounded-full border-sky-200 bg-white/85 px-5 py-3 text-sm text-slate-700 shadow-sm backdrop-blur-xl hover:border-sky-300 hover:bg-sky-50 hover:text-sky-900 sm:w-auto sm:px-7 sm:text-base"
                 >
                   <a href={`tel:${site.phone}`}>
                     <Phone className="shrink-0" /> Direkt anrufen
                   </a>
                 </Button>
               </div>
-              <div className="mt-9 flex flex-wrap gap-x-5 gap-y-3 text-xs font-semibold text-white/58 sm:mt-10 sm:gap-x-6">
+              <div className="mt-9 flex flex-wrap gap-x-5 gap-y-3 text-xs font-semibold text-slate-600 sm:mt-10 sm:gap-x-6">
                 {[
                   "Individuell geplant",
                   "Familienzentriert",
                   "Mehrsprachig",
                 ].map((item) => (
                   <span key={item} className="flex items-center gap-2">
-                    <span className="grid size-5 shrink-0 place-items-center rounded-full bg-sky-300/15 text-sky-300">
+                    <span className="grid size-5 shrink-0 place-items-center rounded-full bg-sky-100 text-sky-700">
                       <Check className="size-3" />
                     </span>
                     {item}
@@ -90,7 +90,7 @@ export default function HomePage() {
           <Reveal delay={0.15} className="relative">
             <div className="relative mx-auto max-w-[560px] lg:ml-auto">
               <div className="absolute -inset-3 rounded-[2.75rem] bg-gradient-to-br from-sky-300/15 via-transparent to-primary/20 blur-xl sm:-inset-5 sm:rounded-[3.5rem]" />
-              <div className="relative aspect-[4/4.75] overflow-hidden rounded-[2.2rem] border border-white/15 bg-slate-800 shadow-[0_45px_120px_-35px_rgba(0,0,0,.65)] sm:rounded-[2.7rem]">
+              <div className="relative aspect-[4/4.75] overflow-hidden rounded-[2.2rem] border border-white/80 bg-white shadow-[0_40px_100px_-42px_rgba(40,105,145,.45)] sm:rounded-[2.7rem]">
                 <Image
                   src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1400&q=88"
                   alt="Pflegefachkraft begleitet eine ältere Dame einfühlsam"
@@ -99,22 +99,22 @@ export default function HomePage() {
                   sizes="(max-width: 1024px) 90vw, 45vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#07111e]/70 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/20 to-transparent" />
                 <div className="absolute inset-x-5 bottom-6 flex items-end justify-between gap-5 sm:inset-x-7 sm:bottom-7">
                   <div>
-                    <p className="text-[.68rem] font-bold tracking-[.16em] text-sky-200 uppercase sm:text-xs sm:tracking-[.2em]">
+                    <p className="text-[.68rem] font-bold tracking-[.16em] text-sky-700 uppercase sm:text-xs sm:tracking-[.2em]">
                       Pflege mit Haltung
                     </p>
-                    <p className="mt-2 max-w-[17rem] font-editorial text-xl leading-6 sm:text-2xl sm:leading-7">
+                    <p className="mt-2 max-w-[17rem] font-editorial text-xl leading-6 text-slate-900 sm:text-2xl sm:leading-7">
                       „Der Mensch bleibt immer im Mittelpunkt.“
                     </p>
                   </div>
-                  <div className="hidden size-14 shrink-0 place-items-center rounded-full border border-white/20 bg-white/10 backdrop-blur-xl sm:grid">
+                  <div className="hidden size-14 shrink-0 place-items-center rounded-full border border-sky-100 bg-white/90 text-primary shadow-sm backdrop-blur-xl sm:grid">
                     <HeartHandshake className="size-6" />
                   </div>
                 </div>
               </div>
-              <div className="absolute left-2 top-8 rounded-2xl border border-white/15 bg-[#0c1b2b]/85 px-3 py-2.5 text-[.7rem] font-bold shadow-2xl backdrop-blur-xl sm:-left-10 sm:top-12 sm:px-4 sm:py-3 sm:text-xs">
+              <div className="absolute left-2 top-8 rounded-2xl border border-sky-100 bg-white/90 px-3 py-2.5 text-[.7rem] font-bold text-slate-700 shadow-xl backdrop-blur-xl sm:-left-10 sm:top-12 sm:px-4 sm:py-3 sm:text-xs">
                 <span className="mr-2 inline-block size-2 rounded-full bg-emerald-400 shadow-[0_0_0_5px_rgba(52,211,153,.12)]" />
                 Persönlich erreichbar
               </div>
@@ -298,14 +298,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-space bg-slate-950 text-white">
+      <section className="section-space border-y border-sky-100 bg-[linear-gradient(135deg,#eef9ff_0%,#ffffff_52%,#fff2f8_100%)] text-foreground">
         <div className="container-shell grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
           <Reveal>
-            <p className="eyebrow text-sky-300">Unser Team</p>
+            <p className="eyebrow text-sky-700">Unser Team</p>
             <h2 className="text-balance text-[1.9rem] font-semibold leading-[1.12] tracking-tight sm:text-4xl lg:text-5xl">
               Kompetenz zeigt sich dort, wo Menschen Verantwortung übernehmen.
             </h2>
-            <p className="mt-6 text-base leading-7 text-white/65">
+            <p className="mt-6 text-base leading-7 text-muted-foreground">
               Zum Team gehören laut Unternehmen Fachkräfte aus der Anästhesie-
               und Intensivpflege, Pflegeexperten für Beatmungspflege,
               Gesundheits- und Krankenpflege, Altenpflege, Palliative Care sowie
@@ -314,7 +314,7 @@ export default function HomePage() {
             <Button
               asChild
               variant="outline"
-              className="mt-8 rounded-full border-white/20 bg-white/5 text-white hover:bg-white hover:text-slate-950"
+              className="mt-8 rounded-full border-sky-200 bg-white text-slate-700 shadow-sm hover:bg-sky-50 hover:text-sky-900"
             >
               <Link href="/ueber-uns">
                 Mehr über uns <ArrowRight />
@@ -332,20 +332,20 @@ export default function HomePage() {
                   className="object-cover object-top"
                 />
               </div>
-              <div className="rounded-3xl bg-white/7 p-6">
+              <div className="rounded-3xl border border-pink-100 bg-white/85 p-6 shadow-sm">
                 <p className="text-2xl font-bold text-pink-400 sm:text-3xl">
                   Mehrsprachig
                 </p>
-                <p className="mt-2 text-sm leading-6 text-white/55">
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
                   Beratung unter anderem auf Deutsch, Englisch, Kroatisch,
                   Serbisch und Spanisch.
                 </p>
               </div>
-              <div className="rounded-3xl bg-sky-400/10 p-6">
-                <p className="text-2xl font-bold text-sky-300 sm:text-3xl">
+              <div className="rounded-3xl border border-sky-100 bg-sky-50/90 p-6 shadow-sm">
+                <p className="text-2xl font-bold text-sky-700 sm:text-3xl">
                   Kontinuierlich
                 </p>
-                <p className="mt-2 text-sm leading-6 text-white/55">
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
                   Schulungen für sicheren Umgang mit Medizinprodukten und
                   Behandlungspflege.
                 </p>

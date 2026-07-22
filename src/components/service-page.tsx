@@ -143,7 +143,7 @@ export function ServicePage(props: Props) {
               <ol className="mt-9 space-y-5">
                 {props.process.map((step, i) => (
                   <li key={step} className="flex gap-4">
-                    <span className="grid size-9 shrink-0 place-items-center rounded-full bg-slate-950 text-xs font-bold text-white">
+                    <span className="grid size-9 shrink-0 place-items-center rounded-full bg-sky-100 text-xs font-bold text-sky-800">
                       {i + 1}
                     </span>
                     <p className="pt-1.5 text-sm font-semibold">{step}</p>

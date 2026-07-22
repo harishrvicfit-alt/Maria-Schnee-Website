@@ -19,9 +19,9 @@ export function SiteHeader() {
   const pathname = usePathname();
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-white/88 shadow-[0_10px_50px_-35px_rgba(8,22,43,.45)] backdrop-blur-2xl">
-      <div className="hidden bg-[#091523] text-white lg:block">
+      <div className="hidden border-b border-sky-100 bg-sky-50/90 text-slate-700 lg:block">
         <div className="container-shell flex h-9 items-center justify-between text-xs">
-          <p className="flex items-center gap-2 text-white/70">
+          <p className="flex items-center gap-2 text-slate-600">
             <span className="size-1.5 rounded-full bg-emerald-400 shadow-[0_0_0_4px_rgba(52,211,153,.12)]" />
             Pflege mit Fachkompetenz und Menschlichkeit – seit 2017
           </p>
@@ -109,8 +109,8 @@ export function SiteHeader() {
                 </SheetClose>
               ))}
             </nav>
-            <div className="mx-5 rounded-2xl bg-slate-950 p-5 text-white">
-              <p className="mb-1 text-xs uppercase tracking-widest text-white/55">
+            <div className="mx-5 rounded-2xl border border-sky-100 bg-sky-50 p-5 text-slate-700">
+              <p className="mb-1 text-xs uppercase tracking-widest text-slate-500">
                 Direkter Kontakt
               </p>
               <a
