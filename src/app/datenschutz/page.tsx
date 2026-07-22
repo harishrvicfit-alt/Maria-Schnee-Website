@@ -41,13 +41,16 @@ export default function DatenschutzPage() {
             </Legal>
             <Legal title="3. Hosting und Server-Protokolle">
               <p>
-                Beim Aufruf dieser Website können durch den Hostinganbieter
-                technisch erforderliche Informationen wie IP-Adresse, Zeitpunkt
-                des Zugriffs, aufgerufene Seite, Referrer, Browsertyp und
-                Betriebssystem in Server-Protokollen verarbeitet werden.
-                Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Der konkrete
-                Hostinganbieter, Speicherort und die Löschfristen müssen vor
-                Veröffentlichung ergänzt werden.
+                Diese Website wird bei Vercel Inc., 340 S Lemon Ave #4133,
+                Walnut, CA 91789, USA, gehostet. Beim Aufruf dieser Website
+                können durch den Hostinganbieter technisch erforderliche
+                Informationen wie IP-Adresse, Zeitpunkt des Zugriffs,
+                aufgerufene Seite, Referrer, Browsertyp und Betriebssystem in
+                Server-Protokollen verarbeitet werden. Rechtsgrundlage ist Art.
+                6 Abs. 1 lit. f DSGVO. Mit Vercel wurde ein Vertrag zur
+                Auftragsverarbeitung geschlossen. Soweit Daten in die USA
+                übermittelt werden, erfolgt dies auf Grundlage der hierfür
+                vorgesehenen Datenschutzgarantien.
               </p>
             </Legal>
             <Legal title="4. Kontaktaufnahme">
@@ -62,11 +65,16 @@ export default function DatenschutzPage() {
             </Legal>
             <Legal title="5. Kontaktformular">
               <p>
-                Das Formular validiert Ihre Eingaben technisch. Der produktive
-                Versanddienst und ein möglicher Auftragsverarbeiter sind vor dem
-                Livegang zu konfigurieren, vertraglich zu prüfen und hier
-                konkret zu benennen. Ohne diese Konfiguration werden keine
-                Formularnachrichten zugestellt.
+                Für den Versand von Nachrichten aus dem Kontakt- sowie dem
+                Beschwerde- und Anregungsformular nutzen wir Resend. Anbieter
+                ist Plus Five Five, Inc., 2261 Market Street #5039, San
+                Francisco, CA 94114, USA. Dabei werden die von Ihnen
+                eingegebenen Daten zum Zweck der Zustellung an uns verarbeitet.
+                Mit dem Anbieter wurde ein Vertrag zur Auftragsverarbeitung
+                geschlossen. Eine mögliche Übermittlung in die USA erfolgt auf
+                Grundlage der EU-Standardvertragsklauseln. Rechtsgrundlage ist
+                je nach Anliegen Art. 6 Abs. 1 lit. b oder lit. f DSGVO sowie
+                bei erteilter Einwilligung Art. 6 Abs. 1 lit. a DSGVO.
               </p>
             </Legal>
             <Legal title="6. Beschwerden und Anregungen">

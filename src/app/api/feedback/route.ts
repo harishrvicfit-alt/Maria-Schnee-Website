@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { sendFormEmail } from "@/lib/form-email";
 
 const feedbackSchema = z
   .object({
@@ -33,18 +34,6 @@ export async function POST(request: Request) {
     );
   }
 
-  const webhook =
-    process.env.FEEDBACK_WEBHOOK_URL ?? process.env.CONTACT_WEBHOOK_URL;
-  if (!webhook) {
-    return NextResponse.json(
-      {
-        message:
-          "Der sichere Formularversand ist noch nicht konfiguriert. Bitte kontaktieren Sie uns telefonisch oder per E-Mail.",
-      },
-      { status: 503 },
-    );
-  }
-
   const {
     anonymous,
     name,
@@ -54,22 +43,29 @@ export async function POST(request: Request) {
     ...feedback
   } = parsed.data;
   void _website;
-  const payload = {
-    ...feedback,
-    anonymous,
-    name: anonymous ? undefined : name?.trim(),
-    email: anonymous ? undefined : email || undefined,
-    phone: anonymous ? undefined : phone?.trim() || undefined,
-    source: "Website Maria Schnee – Beschwerden & Anregungen",
-  };
-
-  const response = await fetch(webhook, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-    cache: "no-store",
-  });
-  if (!response.ok) {
+  const typeLabels = {
+    beschwerde: "Beschwerde",
+    anregung: "Anregung",
+    lob: "Lob",
+    sonstiges: "Sonstige Rückmeldung",
+  } as const;
+  try {
+    await sendFormEmail({
+      subject: `${anonymous ? "Anonyme " : ""}${typeLabels[feedback.type]}: ${feedback.subject}`,
+      heading: "Neue Rückmeldung über die Website",
+      replyTo: anonymous ? undefined : email || undefined,
+      fields: [
+        { label: "Art", value: typeLabels[feedback.type] },
+        { label: "Anonym", value: anonymous ? "Ja" : "Nein" },
+        { label: "Name", value: anonymous ? undefined : name?.trim() },
+        { label: "E-Mail", value: anonymous ? undefined : email },
+        { label: "Telefon", value: anonymous ? undefined : phone?.trim() },
+        { label: "Betreff", value: feedback.subject },
+        { label: "Mitteilung", value: feedback.message },
+      ],
+    });
+  } catch (error) {
+    console.error("Feedbackformular konnte nicht versendet werden", error);
     return NextResponse.json(
       { message: "Ihre Mitteilung konnte nicht übermittelt werden." },
       { status: 502 },
