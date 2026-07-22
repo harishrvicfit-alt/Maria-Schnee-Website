@@ -31,10 +31,11 @@ export async function sendFormEmail({
   if (!apiKey) throw new Error("RESEND_NOT_CONFIGURED");
 
   const resend = new Resend(apiKey);
-  const from =
+  const from = (
     process.env.RESEND_FROM_EMAIL ??
-    "Maria Schnee Website <website@mariaschnee-pflege.de>";
-  const to = process.env.FORM_RECIPIENT_EMAIL ?? site.email;
+    "Maria Schnee Website <website@mariaschnee-pflege.de>"
+  ).trim();
+  const to = (process.env.FORM_RECIPIENT_EMAIL ?? site.email).trim();
   const visibleFields = fields.filter((field) => field.value?.trim());
   const html = `
     <div style="background:#f3f8fb;padding:32px 16px;font-family:Arial,sans-serif;color:#172033">
