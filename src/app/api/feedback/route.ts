@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { sendFormEmail } from "@/lib/form-email";
+import { verifyTurnstile } from "@/lib/turnstile";
 
 const feedbackSchema = z
   .object({
@@ -12,6 +13,7 @@ const feedbackSchema = z
     subject: z.string().min(3).max(160),
     message: z.string().min(20).max(5000),
     website: z.string().max(0).optional(),
+    turnstileToken: z.string().min(1).max(2048),
     consent: z.literal(true),
   })
   .superRefine((data, context) => {
@@ -33,6 +35,14 @@ export async function POST(request: Request) {
       { status: 400 },
     );
   }
+  if (
+    !(await verifyTurnstile(parsed.data.turnstileToken, request, "feedback"))
+  ) {
+    return NextResponse.json(
+      { message: "Bitte bestätigen Sie, dass Sie kein Roboter sind." },
+      { status: 400 },
+    );
+  }
 
   const {
     anonymous,
@@ -40,9 +50,11 @@ export async function POST(request: Request) {
     email,
     phone,
     website: _website,
+    turnstileToken: _turnstileToken,
     ...feedback
   } = parsed.data;
   void _website;
+  void _turnstileToken;
   const typeLabels = {
     beschwerde: "Beschwerde",
     anregung: "Anregung",

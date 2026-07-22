@@ -5,6 +5,7 @@ import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
 import { EyeOff, Loader2, Send } from "lucide-react";
 import { toast } from "sonner";
+import { useCallback, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
@@ -17,6 +18,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { TurnstileWidget } from "@/components/turnstile-widget";
 
 const schema = z
   .object({
@@ -39,11 +41,12 @@ const schema = z
       .min(20, "Bitte beschreiben Sie Ihr Anliegen in mindestens 20 Zeichen.")
       .max(5000),
     website: z.string().max(0).optional(),
-    consent: z
-      .boolean()
-      .refine(Boolean, {
-        message: "Bitte bestätigen Sie den Datenschutzhinweis.",
-      }),
+    turnstileToken: z
+      .string()
+      .min(1, "Bitte führen Sie die Sicherheitsprüfung durch."),
+    consent: z.boolean().refine(Boolean, {
+      message: "Bitte bestätigen Sie den Datenschutzhinweis.",
+    }),
   })
   .superRefine((data, context) => {
     if (!data.anonymous && (!data.name || data.name.trim().length < 2)) {
@@ -64,6 +67,7 @@ export function FeedbackForm() {
     register,
     handleSubmit,
     watch,
+    setValue,
     reset,
     formState: { errors, isSubmitting },
   } = useForm<FormValues>({
@@ -75,11 +79,19 @@ export function FeedbackForm() {
       email: "",
       phone: "",
       website: "",
+      turnstileToken: "",
       consent: false,
     },
   });
 
   const anonymous = watch("anonymous");
+  const turnstileToken = watch("turnstileToken");
+  const [turnstileReset, setTurnstileReset] = useState(0);
+  const setTurnstileToken = useCallback(
+    (token: string) =>
+      setValue("turnstileToken", token, { shouldValidate: true }),
+    [setValue],
+  );
 
   const submit = async (data: FormValues) => {
     const response = await fetch("/api/feedback", {
@@ -90,6 +102,8 @@ export function FeedbackForm() {
     const result = (await response.json().catch(() => null)) as {
       message?: string;
     } | null;
+    setTurnstileToken("");
+    setTurnstileReset((value) => value + 1);
     if (!response.ok) {
       toast.error(
         result?.message ?? "Ihre Mitteilung konnte nicht gesendet werden.",
@@ -266,10 +280,23 @@ export function FeedbackForm() {
         ) : null}
       </div>
 
+      <div>
+        <TurnstileWidget
+          action="feedback"
+          onTokenChange={setTurnstileToken}
+          resetSignal={turnstileReset}
+        />
+        {errors.turnstileToken ? (
+          <p className="mt-2 text-xs font-medium text-destructive">
+            {errors.turnstileToken.message}
+          </p>
+        ) : null}
+      </div>
+
       <Button
         type="submit"
         size="lg"
-        disabled={isSubmitting}
+        disabled={isSubmitting || !turnstileToken}
         className="h-12 w-full rounded-full sm:w-auto"
       >
         {isSubmitting ? <Loader2 className="animate-spin" /> : <Send />}

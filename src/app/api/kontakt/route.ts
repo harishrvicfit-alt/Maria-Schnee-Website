@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { sendFormEmail } from "@/lib/form-email";
+import { verifyTurnstile } from "@/lib/turnstile";
 
 const contactSchema = z.object({
   name: z.string().min(2).max(120),
@@ -8,6 +9,7 @@ const contactSchema = z.object({
   phone: z.string().max(80).optional(),
   message: z.string().min(10).max(5000),
   website: z.string().max(0).optional(),
+  turnstileToken: z.string().min(1).max(2048),
   consent: z.literal(true),
 });
 
@@ -19,6 +21,14 @@ export async function POST(request: Request) {
       { message: "Bitte prüfen Sie Ihre Eingaben." },
       { status: 400 },
     );
+  if (
+    !(await verifyTurnstile(parsed.data.turnstileToken, request, "kontakt"))
+  ) {
+    return NextResponse.json(
+      { message: "Bitte bestätigen Sie, dass Sie kein Roboter sind." },
+      { status: 400 },
+    );
+  }
   try {
     await sendFormEmail({
       subject: `Neue Website-Anfrage von ${parsed.data.name}`,

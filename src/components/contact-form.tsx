@@ -5,11 +5,13 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Loader2, Send } from "lucide-react";
 import { toast } from "sonner";
+import { useCallback, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { TurnstileWidget } from "@/components/turnstile-widget";
 
 const schema = z.object({
   name: z.string().min(2, "Bitte geben Sie Ihren Namen ein."),
@@ -19,11 +21,12 @@ const schema = z.object({
     .string()
     .min(10, "Bitte beschreiben Sie Ihr Anliegen in mindestens 10 Zeichen."),
   website: z.string().max(0).optional(),
-  consent: z
-    .boolean()
-    .refine(Boolean, {
-      message: "Bitte bestätigen Sie die Datenschutzhinweise.",
-    }),
+  turnstileToken: z
+    .string()
+    .min(1, "Bitte führen Sie die Sicherheitsprüfung durch."),
+  consent: z.boolean().refine(Boolean, {
+    message: "Bitte bestätigen Sie die Datenschutzhinweise.",
+  }),
 });
 
 type FormValues = z.infer<typeof schema>;
@@ -33,12 +36,20 @@ export function ContactForm() {
     register,
     handleSubmit,
     setValue,
+    watch,
     formState: { errors, isSubmitting },
     reset,
   } = useForm<FormValues>({
     resolver: zodResolver(schema),
-    defaultValues: { consent: false, website: "" },
+    defaultValues: { consent: false, website: "", turnstileToken: "" },
   });
+  const [turnstileReset, setTurnstileReset] = useState(0);
+  const turnstileToken = watch("turnstileToken");
+  const setTurnstileToken = useCallback(
+    (token: string) =>
+      setValue("turnstileToken", token, { shouldValidate: true }),
+    [setValue],
+  );
 
   const submit = async (data: FormValues) => {
     const response = await fetch("/api/kontakt", {
@@ -46,6 +57,8 @@ export function ContactForm() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
+    setTurnstileToken("");
+    setTurnstileReset((value) => value + 1);
     if (!response.ok) {
       toast.error("Ihre Nachricht konnte nicht gesendet werden.");
       return;
@@ -133,10 +146,22 @@ export function ContactForm() {
           </p>
         ) : null}
       </div>
+      <div>
+        <TurnstileWidget
+          action="kontakt"
+          onTokenChange={setTurnstileToken}
+          resetSignal={turnstileReset}
+        />
+        {errors.turnstileToken ? (
+          <p className="mt-2 text-xs font-medium text-destructive">
+            {errors.turnstileToken.message}
+          </p>
+        ) : null}
+      </div>
       <Button
         type="submit"
         size="lg"
-        disabled={isSubmitting}
+        disabled={isSubmitting || !turnstileToken}
         className="h-12 w-full rounded-full sm:w-auto"
       >
         {isSubmitting ? <Loader2 className="animate-spin" /> : <Send />} Anfrage
