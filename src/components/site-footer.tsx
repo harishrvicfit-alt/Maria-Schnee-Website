@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Mail, MapPin, Phone, Printer } from "lucide-react";
 import { BrandLogo } from "@/components/brand-logo";
 import { BrandFeather } from "@/components/brand-feather";
+import { CookieSettingsButton } from "@/components/cookie-settings-button";
 import { navigation, services, site } from "@/lib/site-data";
 
 export function SiteFooter() {
@@ -102,6 +103,7 @@ export function SiteFooter() {
             vorbehalten.
           </p>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
+            <CookieSettingsButton />
             <Link href="/beschwerden-anregungen" className="hover:text-primary">
               Beschwerden & Anregungen
             </Link>

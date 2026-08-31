@@ -32,6 +32,13 @@ export default function ImpressumPage() {
             <Legal title="Vertreten durch">
               <p>Geschäftsführerin: {site.director}</p>
             </Legal>
+            <Legal title="Handelsregister">
+              <p>
+                Registergericht: Amtsgericht Traunstein
+                <br />
+                Registernummer: HRB 28085
+              </p>
+            </Legal>
             <Legal title="Kontakt">
               <p>
                 Telefon:{" "}
@@ -73,15 +80,6 @@ export default function ImpressumPage() {
                 Hospitalstraße 12, 01097 Dresden
               </p>
             </Legal>
-            <Legal title="Noch rechtlich zu ergänzen">
-              <p className="rounded-2xl border border-amber-200 bg-amber-50 p-5 text-amber-900">
-                Handelsregister, Registernummer, zuständige Aufsichtsbehörde,
-                Umsatzsteuer-ID und berufsrechtliche Angaben sind in den
-                öffentlich auffindbaren Quellen nicht vollständig ausgewiesen.
-                Diese Angaben müssen vor der Veröffentlichung durch das
-                Unternehmen bzw. eine Rechtsberatung ergänzt und geprüft werden.
-              </p>
-            </Legal>
             <Legal title="Haftung für Inhalte">
               <p>
                 Als Diensteanbieter sind wir für eigene Inhalte auf diesen
@@ -93,16 +91,12 @@ export default function ImpressumPage() {
             </Legal>
             <Legal title="Streitbeilegung">
               <p>
-                Angaben zur Bereitschaft oder Verpflichtung zur Teilnahme an
-                einem Streitbeilegungsverfahren vor einer
-                Verbraucherschlichtungsstelle sind vor Veröffentlichung
-                rechtlich zu prüfen und zu ergänzen.
+                Wir sind nicht bereit und nicht verpflichtet, an
+                Streitbeilegungsverfahren vor einer
+                Verbraucherschlichtungsstelle teilzunehmen.
               </p>
             </Legal>
-            <p className="text-xs">
-              Stand: August 2026. Rechtstexte ersetzen keine individuelle
-              Rechtsberatung und müssen fachlich geprüft werden.
-            </p>
+            <p className="text-xs">Stand: August 2026</p>
           </article>
         </div>
       </section>

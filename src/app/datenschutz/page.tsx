@@ -109,17 +109,19 @@ export default function DatenschutzPage() {
                 Ihrem Browser. Die Speicherung ist technisch notwendig, um Ihre
                 Auswahl bei weiteren Seitenaufrufen zu berücksichtigen. Analyse-
                 oder Marketing-Cookies sind in der vorliegenden Version nicht
-                eingerichtet.
+                eingerichtet. Ihre Auswahl können Sie jederzeit über
+                „Cookie-Einstellungen“ im Seitenfuß ändern.
               </p>
             </Legal>
             <Legal title="9. Google Maps">
               <p>
-                Die Karte wird erst nach Ihrem aktiven Klick geladen. Dann kann
-                eine Verbindung zu Google-Servern hergestellt und insbesondere
-                Ihre IP-Adresse übertragen werden. Anbieter ist Google Ireland
-                Limited, Gordon House, Barrow Street, Dublin 4, Irland. Die
-                Einbindung erfolgt auf Grundlage Ihrer Einwilligung gemäß Art. 6
-                Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG.
+                Die Karte wird erst nach Ihrer aktiven Einwilligung über die
+                Cookie-Einstellungen oder die Schaltfläche „Karte laden“
+                geladen. Dann kann eine Verbindung zu Google-Servern hergestellt
+                und insbesondere Ihre IP-Adresse übertragen werden. Anbieter ist
+                Google Ireland Limited, Gordon House, Barrow Street, Dublin 4,
+                Irland. Die Einbindung erfolgt auf Grundlage Ihrer Einwilligung
+                gemäß Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG.
               </p>
             </Legal>
             <Legal title="10. Bildinhalte">
@@ -154,16 +156,7 @@ export default function DatenschutzPage() {
                 kann.
               </p>
             </Legal>
-            <Legal title="14. Pflicht zur abschließenden Prüfung">
-              <p className="rounded-2xl border border-amber-200 bg-amber-50 p-5 text-amber-900">
-                Hosting, Formularversand, eingesetzte Dienstleister,
-                Löschfristen und betriebliche Datenschutzprozesse sind
-                öffentlich nicht vollständig bekannt. Diese Datenschutzerklärung
-                muss vor Veröffentlichung durch den Verantwortlichen und eine
-                qualifizierte Rechtsberatung vervollständigt und geprüft werden.
-              </p>
-            </Legal>
-            <p className="text-xs">Stand: Juli 2026</p>
+            <p className="text-xs">Stand: August 2026</p>
           </article>
         </div>
       </section>
