@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Printer } from "lucide-react";
 import { BrandLogo } from "@/components/brand-logo";
 import { BrandFeather } from "@/components/brand-feather";
 import { navigation, services, site } from "@/lib/site-data";
@@ -79,6 +79,10 @@ export function SiteFooter() {
                 <Mail className="mt-0.5 size-4 shrink-0 text-sky-600" />
                 {site.email}
               </a>
+            </li>
+            <li className="flex gap-3">
+              <Printer className="mt-0.5 size-4 shrink-0 text-sky-600" />
+              <span>Fax: {site.faxDisplay}</span>
             </li>
             <li className="flex gap-3">
               <MapPin className="mt-0.5 size-4 shrink-0 text-sky-600" />

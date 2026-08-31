@@ -14,9 +14,13 @@ const structuredData = {
       legalName: site.name,
       url: site.url,
       sameAs: ["https://pflegedienst-mariaschnee.de/"],
-      logo: { "@type": "ImageObject", url: `${site.url}/maria-schnee-logo.png` },
+      logo: {
+        "@type": "ImageObject",
+        url: `${site.url}/maria-schnee-logo.png`,
+      },
       email: site.email,
       telephone: site.phone,
+      faxNumber: site.fax,
       foundingDate: site.founded,
       contactPoint: {
         "@type": "ContactPoint",
@@ -42,8 +46,10 @@ const structuredData = {
       image: `${site.url}/maria-schnee-logo.png`,
       parentOrganization: { "@id": organizationId },
       telephone: site.phone,
+      faxNumber: site.fax,
       email: site.email,
-      description: "Ambulanter Pflegedienst und außerklinischer Intensivpflegedienst in Waldkraiburg.",
+      description:
+        "Ambulanter Pflegedienst und außerklinischer Intensivpflegedienst in Waldkraiburg.",
       address: {
         "@type": "PostalAddress",
         streetAddress: site.street,
@@ -83,7 +89,9 @@ export function GlobalStructuredData() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replaceAll("<", "\\u003c") }}
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(structuredData).replaceAll("<", "\\u003c"),
+      }}
     />
   );
 }

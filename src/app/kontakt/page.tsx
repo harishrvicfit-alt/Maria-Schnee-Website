@@ -7,6 +7,7 @@ import {
   MapPin,
   MessageSquareText,
   Phone,
+  Printer,
 } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { ConsentMap } from "@/components/consent-map";
@@ -39,6 +40,12 @@ export default function KontaktPage() {
       href: `mailto:${site.email}`,
     },
     {
+      icon: Printer,
+      label: "Fax",
+      value: site.faxDisplay,
+      href: undefined,
+    },
+    {
       icon: MapPin,
       label: "Adresse",
       value: site.address,
@@ -55,13 +62,13 @@ export default function KontaktPage() {
       />
       <section className="section-space">
         <div className="container-shell">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {contacts.map(({ icon: Icon, label, value, href }) => (
               <a
                 key={label}
                 href={href}
-                target={href.startsWith("http") ? "_blank" : undefined}
-                rel={href.startsWith("http") ? "noreferrer" : undefined}
+                target={href?.startsWith("http") ? "_blank" : undefined}
+                rel={href?.startsWith("http") ? "noreferrer" : undefined}
                 className="rounded-3xl border bg-white p-6 transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
               >
                 <div className="grid size-11 place-items-center rounded-2xl bg-primary/10 text-primary">

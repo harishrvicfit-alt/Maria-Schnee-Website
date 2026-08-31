@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
+  Bath,
+  BedSingle,
   Check,
   HeartHandshake,
   MapPin,
@@ -37,7 +39,10 @@ export default function HomePage() {
                 </span>
                 <span>Pflege aus Waldkraiburg · persönlich seit 2017</span>
               </div>
-              <nav aria-label="Pflegeleistungen" className="mb-8 w-full min-w-0 max-w-xl">
+              <nav
+                aria-label="Pflegeleistungen"
+                className="mb-8 w-full min-w-0 max-w-xl"
+              >
                 <p className="mb-3 text-[.64rem] font-bold tracking-[.16em] text-sky-700 uppercase sm:text-[.7rem]">
                   Unsere Leistungen – direkt auswählen
                 </p>
@@ -253,6 +258,58 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section-space relative overflow-hidden bg-white">
+        <div className="absolute right-0 top-0 -z-10 h-96 w-96 rounded-full bg-pink-100/50 blur-3xl" />
+        <div className="container-shell grid items-center gap-14 lg:grid-cols-[1fr_1fr]">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-[2.5rem] border-[7px] border-white premium-shadow ring-1 ring-sky-100">
+              <Image
+                src="/images/wohngemeinschaft/wohnbereiche-collage.png"
+                alt="Helle und barrierefreie Räume der Intensivpflege-Wohngemeinschaft Maria Schnee"
+                width={1097}
+                height={948}
+                sizes="(max-width:1024px) 100vw, 50vw"
+                className="h-auto w-full"
+              />
+              <div className="absolute bottom-5 left-5 rounded-2xl border border-white/70 bg-white/90 px-4 py-3 shadow-lg backdrop-blur-xl">
+                <p className="text-xs font-bold tracking-[.14em] text-primary uppercase">
+                  Mitten in Waldkraiburg
+                </p>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <p className="eyebrow text-sky-700">
+              Intensivpflege-Wohngemeinschaft
+            </p>
+            <h2 className="mt-4 text-balance text-[2rem] font-semibold leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl">
+              Ein persönliches Zuhause mit fachlicher Sicherheit.
+            </h2>
+            <p className="mt-6 text-base leading-8 text-muted-foreground">
+              Unsere außerklinische Wohngemeinschaft im Ortszentrum bietet sechs
+              helle, individuell gestaltbare Einzelzimmer. Eigene barrierefreie
+              Bäder sowie Gemeinschaftsräume mit offener Wohnküche verbinden
+              Privatsphäre, Begegnung und einen möglichst selbstbestimmten
+              Alltag.
+            </p>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              <div className="flex items-center gap-3 rounded-2xl border border-sky-100 bg-sky-50/70 p-4 text-sm font-semibold">
+                <BedSingle className="size-5 text-sky-700" /> 6 Einzelzimmer
+              </div>
+              <div className="flex items-center gap-3 rounded-2xl border border-pink-100 bg-pink-50/70 p-4 text-sm font-semibold">
+                <Bath className="size-5 text-primary" /> Eigene barrierefreie
+                Bäder
+              </div>
+            </div>
+            <Button asChild size="lg" className="mt-8 rounded-full">
+              <Link href="/intensivpflege-wohngemeinschaft">
+                Wohngemeinschaft kennenlernen <ArrowRight />
+              </Link>
+            </Button>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="section-space overflow-hidden">
         <div className="container-shell grid items-center gap-16 lg:grid-cols-[.92fr_1.08fr]">
           <Reveal>
@@ -434,8 +491,8 @@ export default function HomePage() {
                 Aus Waldkraiburg für die Region.
               </h2>
               <p className="mt-5 text-base leading-7 text-muted-foreground">
-                Das reguläre Einsatzgebiet umfasst Waldkraiburg und einen
-                Radius von bis zu 150 Kilometern. Auch darüber hinaus ist eine
+                Das reguläre Einsatzgebiet umfasst Waldkraiburg und einen Radius
+                von bis zu 150 Kilometern. Auch darüber hinaus ist eine
                 Versorgung nach individueller Abstimmung möglich. Die
                 Verfügbarkeit am gewünschten Wohnort klären wir persönlich.
               </p>

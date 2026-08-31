@@ -1,13 +1,18 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo";
 
-const lastModified = new Date("2026-07-18T00:00:00.000Z");
+const lastModified = new Date("2026-08-31T00:00:00.000Z");
 
 const routes = [
   { path: "", changeFrequency: "weekly", priority: 1 },
   { path: "/leistungen", changeFrequency: "monthly", priority: 0.9 },
   { path: "/ambulante-pflege", changeFrequency: "monthly", priority: 0.9 },
   { path: "/intensivpflege", changeFrequency: "monthly", priority: 0.9 },
+  {
+    path: "/intensivpflege-wohngemeinschaft",
+    changeFrequency: "monthly",
+    priority: 0.9,
+  },
   { path: "/kinderintensivpflege", changeFrequency: "monthly", priority: 0.9 },
   { path: "/erwachsenenpflege", changeFrequency: "monthly", priority: 0.8 },
   { path: "/24-stunden-betreuung", changeFrequency: "monthly", priority: 0.8 },
