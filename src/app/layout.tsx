@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { CookieBanner } from "@/components/cookie-banner";
 import { FloatingContact } from "@/components/floating-contact";
 import { GlobalStructuredData } from "@/components/structured-data";
+import { MotionProvider } from "@/components/motion-provider";
 import { SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
@@ -122,19 +123,21 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${newsreader.variable}`}
     >
       <body>
-        <a
-          href="#hauptinhalt"
-          className="fixed left-4 top-3 z-[100] -translate-y-20 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background transition-transform focus:translate-y-0"
-        >
-          Zum Hauptinhalt
-        </a>
-        <GlobalStructuredData />
-        <SiteHeader />
-        <main id="hauptinhalt">{children}</main>
-        <SiteFooter />
-        <FloatingContact />
-        <CookieBanner />
-        <Toaster position="top-right" richColors closeButton />
+        <MotionProvider>
+          <a
+            href="#hauptinhalt"
+            className="fixed left-4 top-3 z-[100] -translate-y-20 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background transition-transform focus:translate-y-0"
+          >
+            Zum Hauptinhalt
+          </a>
+          <GlobalStructuredData />
+          <SiteHeader />
+          <main id="hauptinhalt">{children}</main>
+          <SiteFooter />
+          <FloatingContact />
+          <CookieBanner />
+          <Toaster position="top-right" richColors closeButton />
+        </MotionProvider>
       </body>
     </html>
   );
