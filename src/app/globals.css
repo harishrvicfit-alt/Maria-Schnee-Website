@@ -106,12 +106,6 @@
     @apply py-20 md:py-28 lg:py-36;
   }
 
-  @supports (content-visibility: auto) {
-    .section-space {
-      content-visibility: auto;
-      contain-intrinsic-size: auto 900px;
-    }
-  }
   .eyebrow {
     @apply mb-4 inline-flex items-center gap-2 text-xs font-bold tracking-[0.18em] text-primary uppercase;
   }
