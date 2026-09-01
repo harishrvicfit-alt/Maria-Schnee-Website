@@ -70,6 +70,9 @@ export default function HomePage() {
                 </div>
               </nav>
               <h1 className="text-balance text-[2.65rem] font-medium leading-[.98] tracking-[-0.055em] min-[375px]:text-[3rem] sm:text-6xl lg:text-[5.15rem]">
+                <span className="mb-4 block font-sans text-[.68rem] font-bold leading-5 tracking-[.16em] text-sky-700 uppercase sm:text-xs sm:tracking-[.2em]">
+                  Ambulanter &amp; Intensivpflegedienst in Waldkraiburg{" "}
+                </span>
                 Pflege, die{" "}
                 <span className="block font-editorial font-normal italic text-pink-400 sm:inline">
                   Sicherheit

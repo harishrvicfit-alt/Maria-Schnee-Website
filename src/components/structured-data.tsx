@@ -12,6 +12,11 @@ const structuredData = {
       name: site.name,
       alternateName: site.shortName,
       legalName: site.name,
+      identifier: {
+        "@type": "PropertyValue",
+        propertyID: "Handelsregister",
+        value: "Amtsgericht Traunstein, HRB 28085",
+      },
       url: site.url,
       sameAs: ["https://pflegedienst-mariaschnee.de/"],
       logo: {
@@ -28,7 +33,7 @@ const structuredData = {
         telephone: site.phone,
         email: site.email,
         areaServed: "DE",
-        availableLanguage: ["de"],
+        availableLanguage: ["de", "en", "hr", "sr", "es"],
       },
       address: {
         "@type": "PostalAddress",
