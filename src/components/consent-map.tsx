@@ -3,23 +3,23 @@
 import { useEffect, useState } from "react";
 import { MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  COOKIE_CHOICE_CHANGED_EVENT,
+  type CookieChoice,
+  getStoredCookieChoice,
+  saveCookieChoice,
+} from "@/lib/cookie-consent";
 
 export function ConsentMap() {
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
-    setLoaded(localStorage.getItem("maria-schnee-cookie-choice") === "all");
+    setLoaded(getStoredCookieChoice() === "all");
     const updateConsent = (event: Event) => {
-      setLoaded((event as CustomEvent<string>).detail === "all");
+      setLoaded((event as CustomEvent<CookieChoice>).detail === "all");
     };
-    window.addEventListener(
-      "maria-schnee-cookie-choice-changed",
-      updateConsent,
-    );
+    window.addEventListener(COOKIE_CHOICE_CHANGED_EVENT, updateConsent);
     return () =>
-      window.removeEventListener(
-        "maria-schnee-cookie-choice-changed",
-        updateConsent,
-      );
+      window.removeEventListener(COOKIE_CHOICE_CHANGED_EVENT, updateConsent);
   }, []);
   if (loaded)
     return (
@@ -40,12 +40,20 @@ export function ConsentMap() {
         </div>
         <h3 className="mt-5 text-xl font-bold">Google Maps anzeigen</h3>
         <p className="mt-3 text-sm leading-6 text-muted-foreground">
-          Mit dem Laden der Karte stimmen Sie zu, dass Daten an Google
-          übertragen werden können.
+          Die Karte ist zunächst deaktiviert. Erst mit Ihrer ausdrücklichen
+          Einwilligung wird eine Verbindung zu Google hergestellt und es können
+          Daten, insbesondere Ihre IP-Adresse, übertragen werden.
         </p>
-        <Button onClick={() => setLoaded(true)} className="mt-6 rounded-full">
-          Karte laden
+        <Button
+          onClick={() => saveCookieChoice("all")}
+          className="mt-6 rounded-full"
+        >
+          Google Maps erlauben und laden
         </Button>
+        <p className="mt-4 text-xs leading-5 text-muted-foreground">
+          Ihre Einwilligung können Sie jederzeit über „Cookie-Einstellungen“ im
+          Seitenfuß widerrufen.
+        </p>
       </div>
     </div>
   );

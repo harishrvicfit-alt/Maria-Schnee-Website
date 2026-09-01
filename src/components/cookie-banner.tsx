@@ -4,12 +4,25 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Cookie } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  type CookieChoice,
+  getStoredCookieChoice,
+  saveCookieChoice,
+} from "@/lib/cookie-consent";
 
 export function CookieBanner() {
   const [visible, setVisible] = useState(false);
+  const [choice, setChoice] = useState<CookieChoice | null>(null);
+
   useEffect(() => {
-    setVisible(!localStorage.getItem("maria-schnee-cookie-choice"));
-    const openSettings = () => setVisible(true);
+    const storedChoice = getStoredCookieChoice();
+    setChoice(storedChoice);
+    setVisible(!storedChoice);
+
+    const openSettings = () => {
+      setChoice(getStoredCookieChoice());
+      setVisible(true);
+    };
     window.addEventListener("maria-schnee-open-cookie-settings", openSettings);
     return () =>
       window.removeEventListener(
@@ -17,15 +30,13 @@ export function CookieBanner() {
         openSettings,
       );
   }, []);
-  const choose = (value: string) => {
-    localStorage.setItem("maria-schnee-cookie-choice", value);
-    window.dispatchEvent(
-      new CustomEvent("maria-schnee-cookie-choice-changed", {
-        detail: value,
-      }),
-    );
+
+  const choose = (value: CookieChoice) => {
+    saveCookieChoice(value);
+    setChoice(value);
     setVisible(false);
   };
+
   if (!visible) return null;
   return (
     <aside
@@ -38,7 +49,7 @@ export function CookieBanner() {
           <Cookie className="size-5" />
         </div>
         <div className="flex-1">
-          <h2 className="font-bold">Ihre Privatsphäre ist uns wichtig</h2>
+          <h2 className="font-bold">Cookie- und Datenschutzeinstellungen</h2>
           <p className="mt-2 text-sm leading-6 text-muted-foreground">
             Wir verwenden technisch notwendige Speicherungen. Externe Inhalte
             wie Google Maps werden erst nach Ihrer aktiven Zustimmung geladen.
@@ -51,15 +62,25 @@ export function CookieBanner() {
             </Link>
             .
           </p>
+          {choice ? (
+            <p className="mt-3 text-xs font-semibold text-slate-600">
+              Aktuelle Auswahl:{" "}
+              {choice === "all"
+                ? "Google Maps erlaubt"
+                : "Nur notwendige Funktionen"}
+            </p>
+          ) : null}
           <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button
               onClick={() => choose("all")}
+              aria-pressed={choice === "all"}
               className="w-full rounded-full sm:w-auto"
             >
-              Alle akzeptieren
+              Google Maps erlauben
             </Button>
             <Button
               onClick={() => choose("necessary")}
+              aria-pressed={choice === "necessary"}
               variant="outline"
               className="w-full rounded-full sm:w-auto"
             >

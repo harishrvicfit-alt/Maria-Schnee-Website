@@ -116,12 +116,13 @@ export default function DatenschutzPage() {
             <Legal title="9. Google Maps">
               <p>
                 Die Karte wird erst nach Ihrer aktiven Einwilligung über die
-                Cookie-Einstellungen oder die Schaltfläche „Karte laden“
-                geladen. Dann kann eine Verbindung zu Google-Servern hergestellt
-                und insbesondere Ihre IP-Adresse übertragen werden. Anbieter ist
-                Google Ireland Limited, Gordon House, Barrow Street, Dublin 4,
-                Irland. Die Einbindung erfolgt auf Grundlage Ihrer Einwilligung
-                gemäß Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG.
+                Cookie-Einstellungen oder die Schaltfläche „Google Maps erlauben
+                und laden“ geladen. Dann kann eine Verbindung zu Google-Servern
+                hergestellt und insbesondere Ihre IP-Adresse übertragen werden.
+                Anbieter ist Google Ireland Limited, Gordon House, Barrow
+                Street, Dublin 4, Irland. Die Einbindung erfolgt auf Grundlage
+                Ihrer Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO und § 25
+                Abs. 1 TDDDG.
               </p>
             </Legal>
             <Legal title="10. Bildinhalte">
