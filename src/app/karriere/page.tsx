@@ -22,7 +22,7 @@ export const metadata: Metadata = createMetadata(
 );
 
 const profiles = [
-  "Pflegefachpersonen",
+  "Pflegefachfrau / Pflegefachmann (m/w/d)",
   "Gesundheits- und Krankenpflegekräfte",
   "Altenpflegefachkräfte",
   "Fachkräfte für Anästhesie und Intensivpflege",
@@ -37,7 +37,7 @@ export default function KarrierePage() {
         eyebrow="Karriere bei Maria Schnee"
         current="Karriere"
         title="Pflege können viele leisten. Den Unterschied machen Menschen."
-        description="Sie möchten Verantwortung übernehmen, persönlich arbeiten und Menschen ein selbstbestimmtes Leben ermöglichen? Dann lernen wir Sie gerne kennen."
+        description="Du möchtest Verantwortung übernehmen, persönlich arbeiten und Menschen ein selbstbestimmtes Leben ermöglichen? Dann lernen wir dich gerne kennen."
       />
       <section className="section-space">
         <div className="container-shell grid gap-12 lg:grid-cols-2 lg:items-center">
@@ -60,16 +60,18 @@ export default function KarrierePage() {
           <Reveal delay={0.08}>
             <div className="rounded-[2rem] border border-sky-100 bg-[linear-gradient(135deg,#eef9ff_0%,#fff5fa_100%)] p-8 premium-shadow sm:p-10">
               <Sparkles className="size-8 text-primary" />
-              <h2 className="mt-6 text-2xl font-bold">Initiativ bewerben</h2>
+              <h2 className="mt-6 text-2xl font-bold">
+                Bewirb dich initiativ
+              </h2>
               <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                Senden Sie Ihre aussagekräftigen Unterlagen per E-Mail oder
-                nehmen Sie zunächst telefonisch Kontakt auf.
+                Schick uns deine aussagekräftigen Unterlagen per E-Mail oder
+                nimm zunächst telefonisch Kontakt mit uns auf.
               </p>
               <Button asChild className="mt-7 rounded-full">
                 <a
                   href={`mailto:${site.email}?subject=Initiativbewerbung%20bei%20Maria%20Schnee`}
                 >
-                  <Mail /> Bewerbung per E-Mail
+                  <Mail /> Jetzt per E-Mail bewerben
                 </a>
               </Button>
             </div>
@@ -113,8 +115,8 @@ export default function KarrierePage() {
               </div>
             </div>
             <p className="mt-5 text-xs leading-5 text-muted-foreground">
-              Welche Nachweise für die konkrete Tätigkeit benötigt werden,
-              klären wir im persönlichen Bewerbungsprozess.
+              Welche Nachweise du für die konkrete Tätigkeit benötigst, klären
+              wir gemeinsam im persönlichen Bewerbungsprozess.
             </p>
           </Reveal>
         </div>
@@ -144,17 +146,17 @@ export default function KarrierePage() {
             <div className="max-w-2xl">
               <HeartHandshake className="size-8 text-primary" />
               <h2 className="mt-5 text-3xl font-semibold tracking-tight">
-                Passt Maria Schnee zu Ihnen?
+                Passt Maria Schnee zu dir?
               </h2>
               <p className="mt-4 leading-7 text-muted-foreground">
                 Ein persönliches Gespräch beantwortet mehr als jede
-                Stellenanzeige. Fragen Sie nach aktuellen Einsatzmöglichkeiten
-                und lernen Sie das Unternehmen kennen.
+                Stellenanzeige. Frag uns nach aktuellen Einsatzmöglichkeiten
+                und lerne Maria Schnee persönlich kennen.
               </p>
             </div>
             <Button asChild size="lg" className="mt-8 rounded-full lg:mt-0">
               <Link href="/kontakt">
-                Kontakt aufnehmen <ArrowRight />
+                Jetzt Kontakt aufnehmen <ArrowRight />
               </Link>
             </Button>
           </div>

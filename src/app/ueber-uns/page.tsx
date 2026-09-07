@@ -82,9 +82,9 @@ export default function UeberUnsPage() {
               pflegebedürftigen Person geben die Richtung vor.
             </p>
             <p className="mt-5 text-base leading-8 text-muted-foreground">
-              Unter der Leitung der Familie Katava ist Maria Schnee nach eigenen
-              Angaben seit 2017 tätig. Geschäftsführerin ist Amela Katava. Das
-              Unternehmen beschreibt seine Arbeit als familienzentriert:
+              Unter der Leitung von Geschäftsführerin Amela Katava ist Maria
+              Schnee nach eigenen Angaben seit 2017 tätig. Das Unternehmen
+              beschreibt seine Arbeit als familienzentriert:
               Angehörige werden auf Wunsch informiert, angeleitet und aktiv in
               die Versorgung einbezogen.
             </p>
