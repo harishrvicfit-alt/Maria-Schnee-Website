@@ -151,6 +151,38 @@ export default function IntensivpflegeWohngemeinschaftPage() {
               </Reveal>
             ))}
           </div>
+          <div className="mt-8 grid gap-5 lg:grid-cols-[1.45fr_.55fr]">
+            <Reveal>
+              <div className="relative aspect-[16/7] min-h-[260px] overflow-hidden rounded-[2rem] border-[6px] border-white premium-shadow">
+                <Image
+                  src="/images/einblicke/wohngemeinschaft-raeume.webp"
+                  alt="Helle, wohnliche und barrierearme Räume der Intensivpflege-Wohngemeinschaft Maria Schnee"
+                  fill
+                  sizes="(max-width:1024px) 100vw, 68vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-transparent to-transparent" />
+                <p className="absolute bottom-5 left-5 text-sm font-bold text-white sm:bottom-7 sm:left-7 sm:text-base">
+                  Helle Räume für einen möglichst selbstbestimmten Alltag
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <div className="relative aspect-[4/5] min-h-[280px] overflow-hidden rounded-[2rem] border-[6px] border-white premium-shadow">
+                <Image
+                  src="/images/einblicke/wohngemeinschaft-maria-schnee.webp"
+                  alt="Hinweisschild der Wohngemeinschaft für außerklinische Intensivpflege Maria Schnee"
+                  fill
+                  sizes="(max-width:1024px) 100vw, 28vw"
+                  className="object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-transparent to-transparent" />
+                <p className="absolute bottom-5 left-5 text-sm font-bold text-white sm:bottom-7 sm:left-7">
+                  Mitten in Waldkraiburg
+                </p>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 

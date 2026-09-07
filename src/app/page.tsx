@@ -20,6 +20,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { ServiceGrid } from "@/components/service-grid";
 import { TestimonialCarousel } from "@/components/testimonial-carousel";
 import { BrandFeather } from "@/components/brand-feather";
+import { PhotoGallery } from "@/components/photo-gallery";
 import { services, trustPoints, site } from "@/lib/site-data";
 
 export default function HomePage() {
@@ -415,11 +416,11 @@ export default function HomePage() {
             <div className="grid gap-4 min-[480px]:grid-cols-2">
               <div className="relative aspect-[16/9] overflow-hidden rounded-3xl min-[480px]:col-span-2 min-[480px]:aspect-[16/8]">
                 <Image
-                  src="/images/team-from-behind.webp"
-                  alt="Pflegeteam auf dem gemeinsamen Weg durch einen hellen Garten"
+                  src="/images/einblicke/maria-schnee-pflegeteam.webp"
+                  alt="Das Pflegeteam von Maria Schnee vor der Geschäftsstelle in Waldkraiburg"
                   fill
                   sizes="(max-width:1024px) 100vw, 55vw"
-                  className="object-cover object-top"
+                  className="object-cover object-[center_42%]"
                 />
               </div>
               <div className="rounded-3xl border border-pink-100 bg-white/85 p-6 shadow-sm">
@@ -444,6 +445,8 @@ export default function HomePage() {
           </Reveal>
         </div>
       </section>
+
+      <PhotoGallery />
 
       <section className="section-space bg-sky-50/60">
         <div className="container-shell">

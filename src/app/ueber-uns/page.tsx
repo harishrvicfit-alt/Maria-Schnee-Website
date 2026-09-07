@@ -49,11 +49,11 @@ export default function UeberUnsPage() {
             <div className="grid grid-cols-2 gap-4">
               <div className="relative col-span-2 aspect-[16/9] overflow-hidden rounded-3xl">
                 <Image
-                src="/images/team-from-behind.webp"
-                alt="Pflegeteam auf dem gemeinsamen Weg durch einen hellen Garten"
+                  src="/images/einblicke/pflegeteam-vor-der-geschaeftsstelle.webp"
+                  alt="Maria Schnee Pflegeteam mit Dienstfahrzeug vor der Geschäftsstelle in Waldkraiburg"
                   fill
                   sizes="(max-width:1024px) 100vw, 50vw"
-                className="object-cover"
+                  className="object-cover object-[center_42%]"
                 />
               </div>
               <div className="rounded-3xl bg-primary p-6 text-white">
