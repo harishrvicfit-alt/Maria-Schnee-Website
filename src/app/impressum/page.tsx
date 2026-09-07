@@ -71,13 +71,10 @@ export default function ImpressumPage() {
                 80802 München
               </p>
             </Legal>
-            <Legal title="Verbandszugehörigkeiten">
+            <Legal title="Verbandszugehörigkeit">
               <p>
                 BPA – Bundesverband privater Anbieter sozialer Dienste e. V.,
                 Friedrichstraße 148, 10117 Berlin
-                <br />
-                BHK – Bundesverband Häusliche Kinderkrankenpflege e. V.,
-                Hospitalstraße 12, 01097 Dresden
               </p>
             </Legal>
             <Legal title="Haftung für Inhalte">
@@ -96,7 +93,7 @@ export default function ImpressumPage() {
                 Verbraucherschlichtungsstelle teilzunehmen.
               </p>
             </Legal>
-            <p className="text-xs">Stand: August 2026</p>
+            <p className="text-xs">Stand: September 2026</p>
           </article>
         </div>
       </section>

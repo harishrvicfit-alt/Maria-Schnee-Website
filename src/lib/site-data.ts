@@ -120,9 +120,9 @@ export const faqs = [
       "Maria Schnee arbeitet familienzentriert. Angehörige werden auf Wunsch informiert, angeleitet und aktiv einbezogen. Im Rahmen einer Rückzugspflege kann die Familie schrittweise auf die Übernahme einzelner Tätigkeiten vorbereitet werden.",
   },
   {
-    question: "In welchem Gebiet ist Maria Schnee tätig?",
+    question: "In welchem Gebiet ist eine häusliche 1:1-Versorgung möglich?",
     answer:
-      "Das reguläre Einsatzgebiet umfasst Waldkraiburg und einen Radius von bis zu 150 Kilometern. Auch darüber hinaus ist eine Versorgung nach individueller Abstimmung möglich. Ob eine Versorgung an Ihrem Wohnort möglich ist, klärt das Team gerne direkt mit Ihnen.",
+      "Die häusliche 1:1-Versorgung bietet Maria Schnee in Waldkraiburg und in einem Umkreis von bis zu 150 Kilometern an. Darüber hinaus ist sie nach individueller Prüfung möglich. Für weitere Leistungen gelten individuelle Einsatzbereiche. Ob die gewünschte Versorgung an Ihrem Wohnort möglich ist, klärt das Team gerne direkt mit Ihnen.",
   },
   {
     question: "Bietet Maria Schnee Pflegeberatung nach § 37 Abs. 3 SGB XI an?",

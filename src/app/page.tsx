@@ -186,13 +186,13 @@ export default function HomePage() {
           </div>
           <div className="px-6 py-7 text-center sm:py-9">
             <p className="font-editorial text-4xl font-semibold text-primary">
-              150 km+
+              Bis 150 km
             </p>
             <p className="mt-1 text-[.68rem] font-bold tracking-[.16em] text-muted-foreground uppercase">
-              reguläres Einsatzgebiet
+              für häusliche 1:1-Versorgung
             </p>
             <p className="mt-2 text-xs leading-5 text-sky-700">
-              Darüber hinaus nach individueller Abstimmung
+              Darüber hinaus nach individueller Prüfung
             </p>
           </div>
         </div>
@@ -494,10 +494,11 @@ export default function HomePage() {
                 Aus Waldkraiburg für die Region.
               </h2>
               <p className="mt-5 text-base leading-7 text-muted-foreground">
-                Das reguläre Einsatzgebiet umfasst Waldkraiburg und einen Radius
-                von bis zu 150 Kilometern. Auch darüber hinaus ist eine
-                Versorgung nach individueller Abstimmung möglich. Die
-                Verfügbarkeit am gewünschten Wohnort klären wir persönlich.
+                Die häusliche 1:1-Versorgung bieten wir in Waldkraiburg und in
+                einem Umkreis von bis zu 150 Kilometern an. Darüber hinaus ist
+                sie nach individueller Prüfung möglich. Für unsere weiteren
+                Leistungen gelten jeweils individuelle Einsatzbereiche. Die
+                Verfügbarkeit an Ihrem Wohnort klären wir gerne persönlich.
               </p>
               <address className="mt-8 not-italic">
                 <p className="font-bold">{site.name}</p>
