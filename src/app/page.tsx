@@ -427,8 +427,8 @@ export default function HomePage() {
                   Mehrsprachig
                 </p>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                  Beratung unter anderem auf Deutsch, Englisch, Kroatisch,
-                  Serbisch und Spanisch.
+                  Beratung unter anderem auf Deutsch, Englisch, Kroatisch und
+                  Serbisch.
                 </p>
               </div>
               <div className="rounded-3xl border border-sky-100 bg-sky-50/90 p-6 shadow-sm">

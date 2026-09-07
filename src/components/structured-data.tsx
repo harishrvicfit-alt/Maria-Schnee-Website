@@ -33,7 +33,7 @@ const structuredData = {
         telephone: site.phone,
         email: site.email,
         areaServed: "DE",
-        availableLanguage: ["de", "en", "hr", "sr", "es"],
+        availableLanguage: ["de", "en", "hr", "sr"],
       },
       address: {
         "@type": "PostalAddress",
