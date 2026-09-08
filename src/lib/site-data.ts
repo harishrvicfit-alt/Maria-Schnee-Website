@@ -33,6 +33,7 @@ export const navigation = [
   { label: "Startseite", href: "/" },
   { label: "Über uns", href: "/ueber-uns" },
   { label: "Leistungen", href: "/leistungen" },
+  { label: "Dokumente", href: "/dokumente" },
   { label: "Karriere", href: "/karriere" },
   { label: "FAQ", href: "/faq" },
   { label: "Kontakt", href: "/kontakt" },

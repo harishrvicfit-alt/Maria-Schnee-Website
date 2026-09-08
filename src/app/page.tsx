@@ -5,6 +5,8 @@ import {
   Bath,
   BedSingle,
   Check,
+  Download,
+  FileText,
   HeartHandshake,
   MapPin,
   Phone,
@@ -447,6 +449,27 @@ export default function HomePage() {
       </section>
 
       <PhotoGallery />
+
+      <section className="section-space overflow-hidden bg-[linear-gradient(135deg,#effaff_0%,#fff_48%,#fff2f8_100%)]">
+        <div className="container-shell">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-[2.25rem] border border-white bg-white/80 p-7 shadow-[0_30px_90px_-55px_rgba(14,116,144,.45)] backdrop-blur sm:p-10 lg:flex lg:items-center lg:justify-between lg:gap-12 lg:p-12">
+              <div className="absolute -right-12 -top-16 size-64 rounded-full bg-sky-200/30 blur-3xl" />
+              <div className="relative max-w-2xl">
+                <span className="flex size-12 items-center justify-center rounded-2xl bg-sky-100 text-sky-700"><FileText className="size-6" /></span>
+                <p className="eyebrow mt-6">Dokumente & Downloads</p>
+                <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">Wichtige Informationen jederzeit griffbereit.</h2>
+                <p className="mt-4 max-w-xl leading-7 text-muted-foreground">Unsere aktuellen Informationsmaterialien können Sie direkt online ansehen oder bequem als PDF herunterladen.</p>
+              </div>
+              <div className="relative mt-8 shrink-0 lg:mt-0">
+                <Button asChild size="lg" className="h-12 rounded-full px-6">
+                  <Link href="/dokumente">Dokumente ansehen <Download className="size-4" /></Link>
+                </Button>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
       <section className="section-space bg-sky-50/60">
         <div className="container-shell">

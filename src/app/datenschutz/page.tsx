@@ -132,7 +132,30 @@ export default function DatenschutzPage() {
                 keine Verbindung zu externen Bildplattformen hergestellt.
               </p>
             </Legal>
-            <Legal title="11. Ihre Rechte">
+            <Legal title="11. Dokumentenbereich und Datei-Bereitstellung">
+              <p>
+                Öffentlich bestimmte PDF-Dokumente werden über Vercel Blob
+                gespeichert und ausgeliefert. Beim Abruf gelten ergänzend die
+                unter „Hosting und Server-Protokolle“ beschriebenen technischen
+                Verarbeitungen. Der öffentliche Dokumentenbereich ist nicht für
+                vertrauliche Personen-, Beschäftigten- oder Patientendaten
+                vorgesehen.
+              </p>
+            </Legal>
+            <Legal title="12. Geschütztes Mitarbeiterportal">
+              <p>
+                Für autorisierte Mitarbeitende besteht ein nicht öffentlich
+                verlinkter Verwaltungsbereich. Bei der Anmeldung werden der
+                Benutzername sowie technisch erforderliche Sicherheits- und
+                Sitzungsdaten verarbeitet. Passwörter werden ausschließlich als
+                kryptografische Prüfsummen hinterlegt. Nach erfolgreicher
+                Anmeldung wird ein technisch notwendiges, gegen JavaScript-Zugriff
+                geschütztes Sitzungscookie gesetzt, das spätestens nach acht
+                Stunden abläuft. Grundlage ist Art. 6 Abs. 1 lit. f DSGVO und,
+                soweit einschlägig, § 26 BDSG.
+              </p>
+            </Legal>
+            <Legal title="13. Ihre Rechte">
               <p>
                 Sie haben im Rahmen der gesetzlichen Voraussetzungen das Recht
                 auf Auskunft, Berichtigung, Löschung, Einschränkung der
@@ -142,14 +165,14 @@ export default function DatenschutzPage() {
                 zuständigen Datenschutzaufsichtsbehörde.
               </p>
             </Legal>
-            <Legal title="12. Speicherdauer">
+            <Legal title="14. Speicherdauer">
               <p>
                 Wir speichern personenbezogene Daten nur so lange, wie dies für
                 den jeweiligen Zweck erforderlich ist oder gesetzliche
                 Aufbewahrungspflichten bestehen.
               </p>
             </Legal>
-            <Legal title="13. Sicherheit">
+            <Legal title="15. Sicherheit">
               <p>
                 Diese Website ist für eine verschlüsselte Übertragung per TLS
                 vorgesehen. Bitte beachten Sie, dass eine Datenübertragung im
@@ -157,7 +180,7 @@ export default function DatenschutzPage() {
                 kann.
               </p>
             </Legal>
-            <p className="text-xs">Stand: August 2026</p>
+            <p className="text-xs">Stand: September 2026</p>
           </article>
         </div>
       </section>

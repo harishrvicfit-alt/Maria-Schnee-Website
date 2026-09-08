@@ -9,6 +9,7 @@ const pagePaths: Record<string, `/${string}`> = {
   "Ambulante Pflege": "/ambulante-pflege",
   "Beschwerden & Anregungen": "/beschwerden-anregungen",
   Datenschutz: "/datenschutz",
+  Dokumente: "/dokumente",
   Erwachsenenpflege: "/erwachsenenpflege",
   FAQ: "/faq",
   Impressum: "/impressum",

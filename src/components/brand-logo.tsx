@@ -8,7 +8,11 @@ type BrandLogoProps = {
   priority?: boolean;
 };
 
-export function BrandLogo({ className, light = false, priority = false }: BrandLogoProps) {
+export function BrandLogo({
+  className,
+  light = false,
+  priority = false,
+}: BrandLogoProps) {
   return (
     <Link
       href="/"
