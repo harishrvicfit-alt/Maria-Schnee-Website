@@ -154,7 +154,7 @@ export default function HomePage() {
                 <span className="mr-2 inline-block size-2 rounded-full bg-emerald-400 shadow-[0_0_0_5px_rgba(52,211,153,.12)]" />
                 Persönlich erreichbar
               </div>
-              <div className="absolute -bottom-7 right-1 w-[210px] rounded-[1.4rem] border border-white/60 bg-white/92 p-4 text-slate-950 shadow-2xl backdrop-blur-xl sm:-right-8 sm:w-[245px] sm:rounded-[1.6rem] sm:p-5">
+              <div className="relative z-10 -mt-3 ml-auto w-[calc(100%-1rem)] rounded-[1.4rem] border border-white/80 bg-white/95 p-4 text-slate-950 shadow-[0_24px_60px_-32px_rgba(30,64,90,.55)] backdrop-blur-xl sm:absolute sm:-bottom-7 sm:-right-8 sm:mt-0 sm:w-[245px] sm:rounded-[1.6rem] sm:border-white/60 sm:bg-white/92 sm:p-5 sm:shadow-2xl">
                 <p className="text-[.6rem] font-bold tracking-[.15em] text-primary uppercase sm:text-[.65rem] sm:tracking-[.18em]">
                   Unser Versprechen
                 </p>
